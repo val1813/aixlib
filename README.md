@@ -58,24 +58,26 @@ graph LR
 
 ## 快速开始
 
+> **不限制任何 AI 工具。** Claude、ChatGPT、DeepSeek、Gemini——用哪个顺手就用哪个。Polaris SOP 跑出来的也好，自己跟 AI 聊出来的也好，手推的也好——**只要最终结果经得起验证，按标准 JSON 格式提交，就能入库。**
+
 **两份文件就够了：** [`FORMAT.md`](FORMAT.md) + [`demo_entry.json`](demo_entry.json)
 
 ### 路径 A：用 [Polaris](https://github.com/val1813/polaris) 自动生成
 
 ```
-安装 Polaris → 按科研SOP开展科研 → 跑完自动产出 JSON → 提 PR
+安装 Polaris → 按科研SOP开展科研 → GATE 7 自动产出 JSON → 提 PR
 ```
 
-### 路径 B：让任何 AI 帮你生成（零依赖）
+### 路径 B：任何 AI + 任何方式
 
 ```
+ChatGPT 聊出来的推导、DeepSeek 做的计算、自己手推的——都行。
 1. 打开 FORMAT.md → 复制里面的"给 AI 的提示词"
-2. 粘贴你的研究发现
-3. AI 输出标准 JSON
-4. 放到 entries/ → 提 PR
+2. 贴你的研究发现、推导过程、公式
+3. AI 输出标准 JSON → 放到 entries/ → 提 PR
 ```
 
-**不需要装任何东西。** FORMAT.md + demo_entry.json 扔给任何 AI，说"按这个格式整理我的发现"。
+**不限制工具。不限制方法。只要求格式标准、结论可验证。**
 
 ## 怎么提交
 
