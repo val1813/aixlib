@@ -4,7 +4,7 @@
   <img src="https://img.shields.io/badge/License-CC0-lightgrey?style=for-the-badge">
 </p>
 
-# Polaris Registry — AI科研图书馆
+# AIxLib — AI科研图书馆
 
 > **科学进步不应该有门槛。**
 > 不需要博士学位。不需要学会写论文。不需要考虑"AI 检测率"。
