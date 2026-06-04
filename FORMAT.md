@@ -59,6 +59,11 @@
       "measurement_conditions": "测量条件"
     }
   ],
+  "validation": {
+    "dimension_checks": {"total": 2, "passed": 2, "failed": 0},
+    "prior_art_search": {"performed": true, "tool": "paper-search-mcp"}
+  },
+  "source_files": "指向原始推导文件的路径或URL",
   "lessons": ["如果重来，我会..."],
   "references": [
     {"doi": "10.1103/PhysRevLett.75.1260", "label": "Author Year", "role": "foundation"}
@@ -67,6 +72,8 @@
 ```
 
 ## 字段说明
+
+⛔ **derivation_chain 和 validation 是必填项。** 没有推导链和验证数据的 JSON = 只有结论没有过程 = 不可验证 = 退回。
 
 ### `id` — 唯一标识符
 
@@ -84,12 +91,14 @@
 
 ## 核心规则
 
-1. **公式用 SymPy 格式**：`**` 不用 `^`，`exp()` 不用 `e^`，`sin()` 不用 `\sin`
-2. **confidence 诚实**：0.3 也是科学。0.95 以上请特别论证
-3. **surviving AND killed**：被证伪的声张和被验证的一样重要。两者都要有
-4. **lessons 不能为空**：没有完美的研究。至少写一条教训
-5. **引用带 DOI**：每条 reference 尽量有 DOI。没有 DOI 的标注 "(no DOI)"
-6. **ORCID 确权**：你的发现属于你。免费注册 [orcid.org](https://orcid.org)
+1. **derivation_chain 不能为空**：没有推导过程的声张 = 不可验证。至少 1 步推导，至少 1 个带 SymPy 表达式的公式
+2. **validation 必须填写**：量纲检查几项通过几项失败？先发检索做了吗？——不是 AI 说的，是验证工具跑的
+3. **公式用 SymPy 格式**：`**` 不用 `^`，`exp()` 不用 `e^`，`sin()` 不用 `\sin`
+4. **confidence 诚实**：0.3 也是科学。0.95 以上请特别论证
+5. **surviving AND killed**：被证伪的声张和被验证的一样重要。两者都要有
+6. **lessons 不能为空**：没有完美的研究。至少写一条教训
+7. **引用带 DOI**：每条 reference 尽量有 DOI。没有 DOI 的标注 "(no DOI)"
+8. **ORCID 确权**：你的发现属于你。免费注册 [orcid.org](https://orcid.org)
 
 ## 给 AI 的提示词
 
@@ -98,14 +107,18 @@
 ```
 请把我的研究发现整理成 Polaris JSON 科学发现格式。
 
+⛔ 必须包含：derivation_chain（推导链+公式）+ validation（验证数据）。没有推导过程的声张不可入库。
+
 格式规范如下：
 
 {
-  "project": {"id": "编号", "title": "标题", "domain": "领域(见分类表)", "contradiction_type": "矛盾类型(见分类表)", "tags": ["方法标签"], "date": "日期", "contributor": {"orcid": "ORCID", "github": "GitHub用户名", "name": "姓名"}},
+  "project": {"id": "GitHub用户名-编号", "title": "标题", "domain": "领域(见分类表)", "contradiction_type": "矛盾类型(见分类表)", "tags": ["方法标签"], "date": "日期", "contributor": {"orcid": "ORCID", "github": "GitHub用户名", "name": "姓名"}},
   "contradiction": {"proposition_A": "现有认知", "proposition_B": "矛盾现象", "why_not_both": "为何不共存", "resolution": "你的解决"},
-  "derivation_chain": [{"step": 1, "description": "...", "formulas": [{"label": "F1", "expression": "SymPy格式公式", "variables": {}, "units": "SI单位"}], "assumptions": ["假设"]}],
+  "derivation_chain": [{"step": 1, "description": "...", "formulas": [{"label": "F1", "expression": "SymPy格式公式", "variables": {}, "units": "SI单位"}], "assumptions": ["假设"], "validation": {"dimensions": "PASS或FAIL"}}],
+  "validation": {"dimension_checks": {"total": N, "passed": N, "failed": N}, "prior_art_search": {"performed": true, "tool": "使用的工具"}},
   "claims": [{"id": "C1", "statement": "声张", "confidence": 0.75, "status": "survived或killed", "evidence_for": [], "evidence_against": []}],
   "predictions": [{"id": "P1", "statement": "预言", "observable": "可观测量", "expected_values": {"value": 数字, "uncertainty": 数字, "unit": "单位"}, "measurement_conditions": "条件"}],
+  "source_files": "原始推导文件路径或URL",
   "lessons": ["教训1"],
   "references": [{"doi": "DOI", "label": "标签", "role": "foundation/support/prior_art/contradiction"}]
 }

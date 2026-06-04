@@ -43,6 +43,9 @@ with open('$f') as fp:
     d = json.load(fp)
 proj = d.get('project', {})
 assert proj.get('id'), 'Missing project.id'
+assert d.get('derivation_chain'), 'Missing derivation_chain — 没有推导链不可入库'
+assert len(d['derivation_chain']) > 0, 'derivation_chain empty — 至少1步推导'
+assert d.get('validation'), 'Missing validation — 没有验证数据不可入库'
 assert d.get('claims'), 'Missing claims'
 assert d.get('lessons'), 'Missing lessons'
 assert d.get('references'), 'Missing references'
