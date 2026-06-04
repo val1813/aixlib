@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/AIxLib-v1.0-2563eb?style=for-the-badge&logo=starship&logoColor=white">
+  <img src="https://img.shields.io/badge/AIxSci-v1.0-2563eb?style=for-the-badge&logo=starship&logoColor=white">
   <img src="https://img.shields.io/badge/Entries-0-22c55e?style=for-the-badge&logo=googleresearch&logoColor=white">
   <img src="https://img.shields.io/badge/License-CC0-lightgrey?style=for-the-badge">
 </p>
 
-# AIxLib — AI科研图书馆
+# AIxSci — AI科研图书馆
 
 > **科学进步不应该有门槛。**
 > 不需要博士学位。不需要学会写论文。不需要考虑"AI 检测率"。
