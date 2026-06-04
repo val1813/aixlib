@@ -2,7 +2,7 @@
   "_note": "这是示范条目。基于1905年狭义相对论的历史案例。如果你的AI产出了科研成果，按这个格式交。",
 
   "project": {
-    "id": "DEMO-001",
+    "id": "SR-1905",
     "title": "光速不变与伽利略相对性的矛盾——狭义相对论",
     "domain": "gr-qc",
     "contradiction_type": "hidden-assumption",
