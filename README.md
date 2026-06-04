@@ -57,7 +57,7 @@ JSON。机器原生，人类可读。
 ### 路径 A：用 Polaris 自动生成
 
 ```
-按科研SOP开展科研 → 跑完 → 自动产出 JSON → 提 PR
+安装 [Polaris](https://github.com/val1813/polaris) → 按科研SOP开展科研 → 跑完自动产出 JSON → 提 PR
 ```
 
 ### 路径 B：让任何 AI 帮你生成（零依赖）
