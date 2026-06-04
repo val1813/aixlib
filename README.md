@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Registry-v1.0-2563eb?style=for-the-badge&logo=starship&logoColor=white">
+  <img src="https://img.shields.io/badge/AIxLib-v1.0-2563eb?style=for-the-badge&logo=starship&logoColor=white">
   <img src="https://img.shields.io/badge/Entries-0-22c55e?style=for-the-badge&logo=googleresearch&logoColor=white">
   <img src="https://img.shields.io/badge/License-CC0-lightgrey?style=for-the-badge">
 </p>
@@ -26,7 +26,13 @@
 
 你不用写"Dear Editor"。不用考虑叙事结构。不用纠结 AI 检测率。不用把 AI 的痕迹藏起来。**交一份 JSON。** 机器验机械，人审语义。能过就入库。很简单。
 
+### 🧭 强烈建议使用北极星
+
+虽然任何 AI 工具都可以，但 **[Polaris](https://github.com/val1813/Polaris)** 是专门为此设计的科研引擎——14 个 AI 角色互相制衡，Python 确定性验算 + AI 语义审查，3 轮对抗后自动产出标准 JSON。一句话启动：**"按科研SOP开展科研"**。省去你手动整理格式的麻烦，也更容易通过入库审核。
+
 ---
+
+## 不只是图书馆——是全球知识图谱
 
 ## 不只是图书馆——是全球知识图谱
 
