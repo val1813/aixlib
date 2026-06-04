@@ -1,0 +1,48 @@
+name: Rebuild Index
+
+on:
+  push:
+    branches: [main]
+    paths: ['entries/*.json']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Build index.json
+        run: |
+          python -c "
+          import json, glob
+          entries = []
+          for f in sorted(glob.glob('entries/*.json')):
+              with open(f) as fp:
+                  d = json.load(fp)
+                  proj = d.get('project', {})
+                  claims = d.get('claims', [])
+                  e = {
+                      'id': proj.get('id', '?'),
+                      'title': proj.get('title', ''),
+                      'domain': proj.get('domain', ''),
+                      'contradiction_type': proj.get('contradiction_type', ''),
+                      'status': proj.get('status', ''),
+                      'date': proj.get('date', ''),
+                      'contributor': proj.get('contributor', {}),
+                      'contradiction': d.get('contradiction', {}),
+                      'claims': claims,
+                      'predictions': d.get('predictions', []),
+                      'lessons': d.get('lessons', [])
+                  }
+                  entries.append(e)
+          with open('index.json', 'w') as fp:
+              json.dump({'total': len(entries), 'entries': entries}, fp, ensure_ascii=False, indent=2)
+          print(f'Index rebuilt: {len(entries)} entries')
+          "
+      - name: Commit index
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.json
+          git diff --staged --quiet || git commit -m "Auto: rebuild index.json" && git push
