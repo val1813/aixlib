@@ -1,0 +1,77 @@
+name: Validate JSON Submissions
+
+on:
+  pull_request:
+    paths:
+      - 'entries/*.json'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: pip install sympy pint
+
+      - name: Get changed JSON files
+        id: changed
+        run: |
+          FILES=$(git diff --name-only origin/main...HEAD -- 'entries/*.json')
+          echo "files=$FILES" >> $GITHUB_OUTPUT
+
+      - name: Validate each submission
+        run: |
+          for f in ${{ steps.changed.outputs.files }}; do
+            echo "=== Validating $f ==="
+
+            # 1. JSON syntax check
+            python -m json.tool "$f" > /dev/null || {
+              echo "::error file=$f::Invalid JSON syntax"
+              exit 1
+            }
+
+            # 2. Schema check (required fields)
+            python -c "
+import json, sys
+with open('$f') as fp:
+    d = json.load(fp)
+proj = d.get('project', {})
+assert proj.get('id'), 'Missing project.id'
+assert d.get('claims'), 'Missing claims'
+assert d.get('lessons'), 'Missing lessons'
+assert d.get('references'), 'Missing references'
+contrib = proj.get('contributor', {}) if isinstance(proj, dict) else {}
+assert contrib.get('github'), 'Missing contributor.github'
+print('Schema: PASS')
+" || exit 1
+
+            # 3. Content quality checks
+            python -c "
+import json
+with open('$f') as fp:
+    d = json.load(fp)
+claims = d.get('claims', [])
+survived = [c for c in claims if c.get('status') == 'survived']
+killed = [c for c in claims if c.get('status') == 'killed']
+assert len(survived) > 0, 'No surviving claims'
+assert len(killed) > 0, 'No killed claims (must document failures)'
+assert len(d.get('lessons', [])) > 0, 'No lessons learned'
+# Check at least one reference has DOI
+refs = d.get('references', [])
+dois = [r.get('doi') for r in refs if r.get('doi')]
+assert len(dois) > 0, 'No DOI references'
+print(f'Content: PASS ({len(survived)} survived, {len(killed)} killed, {len(dois)} DOIs)')
+" || exit 1
+
+            echo "  $f: ALL CHECKS PASSED"
+          done
+
+      - name: Summary
+        run: |
+          echo "All submissions validated. Ready for human review."
