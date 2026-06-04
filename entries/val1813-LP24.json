@@ -19,6 +19,49 @@
     "why_not_both": "若B成立则QM和GR共享同一个几何根源。若A成立则二者只是形式上相似而非本质上统一。",
     "resolution": "部分证伪，部分存活。|e^(iθ)|²=1不能推导Schrödinger方程(循环论证)。ħ₀^m与Ĥ₀不能在Poisson括号框架中共存。但三层约束结构是有效概念框架，Ĵ约束是原创非平凡发现。"
   },
+  "derivation_chain": [
+    {
+      "step": 1, "agent": "A", "round": 1,
+      "description": "复线丛上Hermitian度量保持条件→幺正演化+度规兼容",
+      "formulas": [
+        {"label": "F1", "expression": "d h(psi,psi) = h(D psi, psi) + h(psi, D psi) = 0", "latex": "d h(\\psi,\\psi) = h(D\\psi,\\psi) + h(\\psi,D\\psi) = 0", "variables": {"h": "Hermitian_metric", "D": "connection", "psi": "section"}, "units": "dimensionless", "note": "纤维丛上的约束方程"}
+      ],
+      "assumptions": ["复线丛L→M, 结构群U(1)", "联络D存在"],
+      "validation": {"dimensions": "PASS"}
+    },
+    {
+      "step": 2, "agent": "A", "round": 1,
+      "description": "INSPECTOR发现：|e^(iθ)|²=1→Schrödinger是循环论证",
+      "formulas": [
+        {"label": "F2", "expression": "i*hbar*d_t psi = H psi", "latex": "i\\hbar\\partial_t\\psi = H\\psi", "variables": {"hbar": "reduced_Planck", "H": "Hamiltonian"}, "units": "J*s", "note": "从|e^(iθ)|²=1推导此方程→几何重述非推导→被INSPECTOR判为循环论证"}
+      ],
+      "assumptions": ["平坦时空", "ψ=e^(iS/hbar)假设"],
+      "validation": {"verdict": "killed_by_inspector_R1"}
+    },
+    {
+      "step": 3, "agent": "A", "round": 3,
+      "description": "{ħ₀^m, Ĥ₀}不闭合——Poisson括号验证",
+      "formulas": [
+        {"label": "F3", "expression": "{h_0**m, H_0} != constraint_linear_combination", "latex": "\\{\\hbar_0^m, \\mathcal{H}_0\\} \\neq \\text{constraint linear combination}", "variables": {"h_0**m": "|psi|**2 - 1", "H_0": "Wheeler-DeWitt_constraint"}, "units": "dimensionless", "note": "在Dirac-Bergmann框架内严格证明不闭合"}
+      ],
+      "assumptions": ["Dirac-Bergmann约束量化程序", "经典相空间存在"],
+      "validation": {"verdict": "mathematically_rigorous_but_tool_may_be_wrong"}
+    },
+    {
+      "step": 4, "agent": "B", "round": 2,
+      "description": "Born规则=旋转波近似=虚部丢弃——三者同构",
+      "formulas": [
+        {"label": "F4", "expression": "P(n) = |c_n|**2 = c_n* * c_n", "latex": "P(n) = |c_n|^2 = c_n^* c_n", "variables": {"c_n": "amplitude"}, "units": "dimensionless", "note": "Born规则消掉e^(i*phi_n)→虚部丢弃→与旋转波近似消掉的Im(C_12)同构"}
+      ],
+      "assumptions": ["波函数展开ψ=Σc_n|n⟩"],
+      "validation": {"note": "概念对应，数学严格"}
+    }
+  ],
+  "validation": {
+    "dimension_checks": {"total": 4, "passed": 4, "failed": 0},
+    "prior_art_search": {"found": ["Lusanna 1997-2006", "Jadczyk-Modugno CQM 1992-1995"], "impact": "约束统一声张被先占，Ĵ约束仍原创"}
+  },
+  "source_files": "D:/Claude/ai-reservations/polaris/examples/LP24-EulerUnification/",
   "claims": [
     {"id": "C1", "statement": "|e^(iθ)|²=1和ds²不变共享度量保持的约束结构", "confidence": 0.85, "status": "survived", "evidence_for": ["数学严格：两者都是Hermitian度量兼容性的投影"], "evidence_against": []},
     {"id": "C2", "statement": "Ĵ=dS_vN/dτ+∇_μJ^μ_G=0是原创非平凡约束", "confidence": 0.90, "status": "survived", "evidence_for": ["无已知先发", "生/死测试通过", "独立于统一框架可存在"], "evidence_against": ["需要Hilbert空间对易子重新验证"]},
