@@ -22,31 +22,37 @@
 
 不是因为他写得像 Nature。是因为——矛盾是真实的，推导是透明的，每一条声张都标注了确信度，被推翻的部分没有被偷偷删掉，引用的论文都有 DOI。
 
-这就是我们建这个图书馆的原因：
-
 > **让每一个人——无论文理、无论学历——都能在 AI 的辅助下推进科学进步。**
 
-你不用写"Dear Editor"。不用考虑叙事结构。不用纠结 AI 检测率。不用把 AI 的痕迹藏起来。
-
-**你只需要交一份 JSON。** 里面是你认为对的、有促进的发现。机器来验机械的部分，人来审语义的部分。能过就入库。过不了就改。很简单。
+你不用写"Dear Editor"。不用考虑叙事结构。不用纠结 AI 检测率。不用把 AI 的痕迹藏起来。**交一份 JSON。** 机器验机械，人审语义。能过就入库。很简单。
 
 ---
 
-## 不是去 AI 化。是换一个格式。
+## 不只是图书馆——是全球知识图谱
 
-现在的学术圈在内耗什么？
+一份 JSON 是一个发现。一百份 JSON 是什么？
 
-> AI 写论文 → 另一个 AI 查 AI 痕迹 → 降到了 8%！→ 投稿 → 审稿人："这里写得不像人" → 再改
+```mermaid
+graph LR
+    J1["🧪 超导机理<br/>val1813-CM-001"] -->|共享数学结构| J2["🔬 量子相变<br/>zhangsan-Q-003"]
+    J2 -->|引用同一篇PRL| J3["⚡ 奇怪金属<br/>lisi-CM-012"]
+    J1 -->|矛盾类型相同| J4["🧲 拓扑序<br/>wangwu-CM-005"]
+    J3 -->|方法标签重叠| J5["📐 纠缠熵<br/>zhao-Q-007"]
+    J5 -->|ORCID同作者| J6["🔮 隐藏假设<br/>zhao-S1-002"]
+```
 
-把算力花在骗检测器上。把创造力花在"装人"上。
+**每一份 JSON 不是孤岛。** `linker.py` 自动扫描所有条目，发现四类连接：
 
-**我们不玩这个游戏。我们换格式。**
+| 连接类型 | 触发条件 | 意味着 |
+|---------|---------|--------|
+| 🔴 共享数学结构 | 两个课题用了同一个 `math_object` | 可能指向更深层的统一原理 |
+| 🟡 共享引用 | 两个课题引用了同一篇论文 | 独立推导指向同一源头——互相印证 |
+| ⚪ 共享领域 | 同一个 arXiv 分类 | 领域知识在积累 |
+| 🟢 同一作者 | 同一个 ORCID | 追踪一个人的科研轨迹 |
 
-JSON。机器原生，人类可读。
-- 推导链每一步都有 SymPy 表达式 → **确定性验算**
-- 每一条声张都有 confidence + 正反证据 → **透明**
-- 被证伪的声张不会被删除——和存活的声张一样重要 → **诚实**
-- 你的 ORCID 在上面。你的发现永远属于你 → **确权**
+**当 JSON 足够多——这就是一个自我生长的、可检索的、跨学科碰撞的全球科研知识库。**
+
+不是一百个人各自写一百篇 PDF 扔在 arXiv 上永远没人读。是一百份 JSON 互相咬合，机器帮你发现"你的凝聚态发现和她的量子信息结论共享同一个数学结构"。
 
 ---
 
@@ -54,10 +60,10 @@ JSON。机器原生，人类可读。
 
 **两份文件就够了：** [`FORMAT.md`](FORMAT.md) + [`demo_entry.json`](demo_entry.json)
 
-### 路径 A：用 Polaris 自动生成
+### 路径 A：用 [Polaris](https://github.com/val1813/polaris) 自动生成
 
 ```
-安装 [Polaris](https://github.com/val1813/polaris) → 按科研SOP开展科研 → 跑完自动产出 JSON → 提 PR
+安装 Polaris → 按科研SOP开展科研 → 跑完自动产出 JSON → 提 PR
 ```
 
 ### 路径 B：让任何 AI 帮你生成（零依赖）
@@ -69,47 +75,43 @@ JSON。机器原生，人类可读。
 4. 放到 entries/ → 提 PR
 ```
 
-**不需要装任何东西。** 只要你有研究发现（哪怕是在别的 AI 工具上探索出来的），把 FORMAT.md + demo_entry.json 扔给 AI，说"按这个格式整理我的发现"。
+**不需要装任何东西。** FORMAT.md + demo_entry.json 扔给任何 AI，说"按这个格式整理我的发现"。
 
 ## 怎么提交
 
 ```
-1. 准备好你的 JSON
-2. Fork 本仓库 → 放到 entries/
-3. 提 PR → 自动校验 → 合入
+Fork 本仓库 → JSON 放 entries/ → 提 PR → 自动校验 → 合入
 ```
 
 ## 入库标准
 
-**不是所有 JSON 都能进。但门槛不是"AI 写的吗"。**
-
 | 自动检查 | 人工抽查 |
 |---------|---------|
 | JSON schema 合法 | ≥1 个 confidence ≥ 0.6 的节点 |
-| metrics.py ≥ 70% | surviving + killed 都不为空 |
-| contributor.github 存在 | 抽查 1 个 DOI 真实 |
-| 至少 1 个引用格式有效 | 没有 ORCID → 提醒注册 |
+| contributor.github 存在 | surviving + killed 都不为空 |
+| 至少 1 个引用格式有效 | 抽查 1 个 DOI 真实 |
 
 详见 [REVIEW_POLICY.md](REVIEW_POLICY.md)
 
-## 分类
+## 分类标签
 
-每份 JSON 带三类标签，可从已有选也可自创：
+每份 JSON 带三类标签（详见 [TAXONOMY.md](TAXONOMY.md)）：
 - **领域**：arXiv 分类（cond-mat, hep-th, quant-ph...）
 - **矛盾类型**：hidden-assumption / exp-vs-theory / theory-vs-theory...
 - **方法标签**：自由填写
 
-详见 [TAXONOMY.md](TAXONOMY.md)
-
 ## 链接
 
-- **引擎**：[polaris](https://github.com/val1813/polaris) — 跑课题的 SOP
-- **格式**：[validation/schema.md](https://github.com/val1813/polaris/blob/main/validation/schema.md) — JSON 标准
-- **链接器**：[knowledge_graph/linker.py](https://github.com/val1813/polaris/blob/main/knowledge_graph/linker.py) — 把分散的 JSON 织成图谱
+| 项目 | 说明 |
+|------|------|
+| [Polaris 引擎](https://github.com/val1813/polaris) | 跑课题的 SOP |
+| [JSON 格式规范](FORMAT.md) | 标准 + 给 AI 的提示词 |
+| [示范条目](demo_entry.json) | 狭义相对论案例 |
+| [链接器](https://github.com/val1813/polaris/blob/main/knowledge_graph/linker.py) | 把分散的 JSON 织成图谱 |
 
 ## 许可
 
-所有条目以 **CC0（公共领域）** 发布。你的 ORCID 永远关联你的发现。
+CC0（公共领域）。你的 ORCID 永远关联你的发现。
 
 ---
 
