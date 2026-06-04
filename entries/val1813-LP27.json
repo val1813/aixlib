@@ -1,0 +1,47 @@
+{
+  "polaris_version": "1.0",
+  "project": {
+    "id": "val1813-LP27",
+    "title": "T-linear电阻率不逻辑蕴含非费米液体——隐藏假设检验",
+    "domain": "cond-mat.str-el",
+    "contradiction_type": "hidden-assumption",
+    "tags": ["non-Fermi-liquid", "transport", "information-theoretic", "renormalization-group"],
+    "selector_strategy": "S1",
+    "hidden_assumption": "T-linear电阻率是准粒子破坏的充分必要条件",
+    "date": "2026-06-04",
+    "status": "有边界完成",
+    "rounds": 3,
+    "contributor": {"orcid": "", "github": "val1813", "name": "val1813"}
+  },
+  "contradiction": {
+    "proposition_A": "T-linear电阻率意味着准粒子被破坏——ARPES无准粒子峰、比热异常、光导反常等多条独立证据",
+    "proposition_B": "存在保持准粒子的T-linear机制——Lee 2024 umklapp FL模型和Levitov 2024流体动力学T-linear",
+    "why_not_both": "A声称T-linear universal→准粒子消失。B声称存在T-linear with intact准粒子。B为真则A的普遍性声明被打破。",
+    "resolution": "T-linear是各向同性散射率的充要条件，不逻辑蕴含准粒子破坏。B的构造有效，A的普遍性声明被打破(75%确信度)。先发文献Tulipman&Berg 2023部分预占核心声张。"
+  },
+  "claims": [
+    {"id": "C1", "statement": "T-linear电阻率不逻辑蕴含准粒子破坏", "confidence": 0.75, "status": "survived", "evidence_for": ["Lee 2024 umklapp FL", "Levitov 2024流体动力学", "Z(T)∈[0.19,0.53]保持正→准粒子权重未消失"], "evidence_against": ["Tulipman&Berg 2023先发部分预占", "Section 3.4方向错误"]},
+    {"id": "C2", "statement": "Z(T)∈[0.19,0.53]在Caprara温区保持正", "confidence": 0.80, "status": "survived", "evidence_for": ["Eliashberg层次自能计算", "Kramers-Kronig约束"], "evidence_against": ["公式无独立文献锚点——本项目推导"]},
+    {"id": "C3", "statement": "散粒噪声Fano因子是最优先实验检验", "confidence": 0.95, "status": "survived", "evidence_for": ["Wang PRR 2024 FL值", "Nikolaenko PRR 2023 SYK值", "Wu PRB 2024 MFL值"], "evidence_against": []},
+    {"id": "C4", "statement": "SOC 1/f噪声纳米增强是排他性预测", "confidence": 0.40, "status": "killed", "killed_by": "REVIEWER——SOC基础缺失，核心文献未引用"}
+  ],
+  "predictions": [
+    {"id": "P1", "statement": "Fano因子可区分FL/NFL/SYK", "observable": "散粒噪声Fano因子F", "type": "experimentally_testable", "expected_values": {"FL": {"value": 0.433, "unit": "dimensionless"}, "SYK_NFL": {"value": 0.167, "unit": "dimensionless"}, "MFL": {"value": "→0", "unit": "dimensionless"}}, "measurement_conditions": "T<100K, 直流极限, 弹道输运区"}
+  ],
+  "ab_contributions": {
+    "agent_A": {"framework": "凝聚态/费米液体理论", "key_findings": ["Hlubina-Rice逆定理", "I/II/III型奇异金属三分类", "Z(T)∈[0.19,0.53]定量"]},
+    "agent_B": {"framework": "信息论/MaxCal/统计推断", "key_findings": ["MaxCal吸引子——T-linear是相空间约束下的统计必然性", "分形输运网络维度依赖", "接触几何统一结构"]},
+    "convergence": "互补——A提供机制(是什么)，B提供原理(为什么统计收敛到T-linear)"
+  },
+  "lessons": [
+    {"category": "prior_art", "lesson": "Tulipman&Berg 2023先发被SELECTOR和A博士§-1漏检，REVIEWER在R3才抓住。→R1先发拦截gate已加入SOP"},
+    {"category": "tooling", "lesson": "paper-search-mcp不可用导致SELECTOR AB验证精度不足，13/13 Agent全降级WebSearch"},
+    {"category": "method", "lesson": "B博士跨学科跳跃R1评分4.6/10，3轮才收敛到6.3→AHA触发频率从5轮降至2轮"}
+  ],
+  "references": [
+    {"doi": "10.1038/s42005-021-00779-5", "label": "Caprara et al. 2022", "role": "foundation"},
+    {"doi": "10.1103/PhysRevB.108.235157", "label": "Tulipman & Berg 2023", "role": "prior_art"},
+    {"doi": "10.1103/PhysRevResearch.6.L042045", "label": "Wang et al. 2024", "role": "support"},
+    {"doi": "10.1103/PhysRevResearch.5.043143", "label": "Nikolaenko et al. 2023", "role": "support"}
+  ]
+}

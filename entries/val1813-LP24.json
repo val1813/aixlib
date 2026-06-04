@@ -1,0 +1,48 @@
+{
+  "polaris_version": "1.0",
+  "project": {
+    "id": "val1813-LP24",
+    "title": "欧拉公式统一约束框架——QM与GR共享纤维丛根源",
+    "domain": "gr-qc",
+    "contradiction_type": "hidden-assumption",
+    "tags": ["fiber-bundle", "category-theory", "constraint-algebra", "quantum-foundations"],
+    "selector_strategy": "S1",
+    "hidden_assumption": "量子约束和引力约束可以在同一Poisson括号代数中处理",
+    "date": "2026-06-03",
+    "status": "有边界完成",
+    "rounds": 3,
+    "contributor": {"orcid": "", "github": "val1813", "name": "val1813"}
+  },
+  "contradiction": {
+    "proposition_A": "量子力学的幺正性|ψ|²=1和广义相对论的度规兼容性∇g=0是两个独立的基本原理",
+    "proposition_B": "两者都是同一个复线丛Hermitian度量保持条件在不同投影方向上的表现",
+    "why_not_both": "若B成立则QM和GR共享同一个几何根源。若A成立则二者只是形式上相似而非本质上统一。",
+    "resolution": "部分证伪，部分存活。|e^(iθ)|²=1不能推导Schrödinger方程(循环论证)。ħ₀^m与Ĥ₀不能在Poisson括号框架中共存。但三层约束结构是有效概念框架，Ĵ约束是原创非平凡发现。"
+  },
+  "claims": [
+    {"id": "C1", "statement": "|e^(iθ)|²=1和ds²不变共享度量保持的约束结构", "confidence": 0.85, "status": "survived", "evidence_for": ["数学严格：两者都是Hermitian度量兼容性的投影"], "evidence_against": []},
+    {"id": "C2", "statement": "Ĵ=dS_vN/dτ+∇_μJ^μ_G=0是原创非平凡约束", "confidence": 0.90, "status": "survived", "evidence_for": ["无已知先发", "生/死测试通过", "独立于统一框架可存在"], "evidence_against": ["需要Hilbert空间对易子重新验证"]},
+    {"id": "C3", "statement": "Wheeler-DeWitt是统一框架中引力侧的自然极限", "confidence": 0.70, "status": "survived", "evidence_for": ["Ĥ₀约束在引力极限下退化为WDW方程"], "evidence_against": []},
+    {"id": "C4", "statement": "|e^(iθ)|²=1推导Schrödinger方程", "confidence": 0.0, "status": "killed", "killed_by": "AB R1一致判定循环论证", "evidence_against": ["Jadczyk-Modugno CQM已先发", "推导实为几何重述非推导"]},
+    {"id": "C5", "statement": "ħ₀^m和Ĥ_μ在同一第一类约束代数中", "confidence": 0.0, "status": "killed", "killed_by": "A博士R3严格证明{ħ₀^m,Ĥ₀}不闭合", "evidence_against": ["Poisson括号可能是错误工具——消融分析"]},
+    {"id": "C6", "statement": "统一约束代数框架", "confidence": 0.0, "status": "killed", "killed_by": "Lusanna 1997-2006已先占", "evidence_against": ["ħ₀^m不能在Poisson括号框架中与Ĥ₀共存"]}
+  ],
+  "predictions": [
+    {"id": "P1", "statement": "Ĵ约束的生/死测试——如果Born规则丢弃的虚部信息有物理后果，Ĵ≠0", "observable": "开放量子系统非马尔可夫性度量", "type": "experimentally_testable", "expected_values": {"value": "待定量", "unit": "dimensionless"}}
+  ],
+  "ab_contributions": {
+    "agent_A": {"framework": "纤维丛几何/约束量化", "key_findings": ["{ħ₀^m,Ĥ₀}不闭合严格证明", "消融分析：Poisson括号是错误工具"]},
+    "agent_B": {"framework": "信息论/范畴论", "key_findings": ["QM⊣GR adjunction假说", "Born规则=旋转波近似=虚部丢弃三者同构", "Ĵ约束物理意义重述"]},
+    "convergence": "互补——A提供数学严格性(证伪强声张)，B提供概念框架(救回Ĵ约束)"
+  },
+  "lessons": [
+    {"category": "tooling", "lesson": "Poisson括号是经典工具，不应验证量子约束。统一可能需要范畴论自然变换而非Lie代数闭合"},
+    {"category": "prior_art", "lesson": "Lusanna 1997-2006已先占约束统一。Jadczyk-Modugno CQM已先发几何QM。"},
+    {"category": "method", "lesson": "消融分析是本课题最有价值的方法论创新——追问验证工具本身的假设是否与框架兼容"}
+  ],
+  "references": [
+    {"doi": "10.1103/PhysRevLett.75.1260", "label": "Jacobson 1995", "role": "foundation"},
+    {"label": "Lusanna hep-th/9705154 (1997)", "role": "prior_art"},
+    {"label": "Jadczyk-Modugno CQM (1992-1995)", "role": "prior_art"}
+  ]
+}
