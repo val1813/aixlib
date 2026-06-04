@@ -48,10 +48,31 @@ JSON。机器原生，人类可读。
 
 ---
 
+## 快速开始
+
+**两份文件就够了：** [`FORMAT.md`](FORMAT.md) + [`demo_entry.json`](demo_entry.json)
+
+### 路径 A：用 Polaris 自动生成
+
+```
+按科研SOP开展科研 → 跑完 → 自动产出 JSON → 提 PR
+```
+
+### 路径 B：让任何 AI 帮你生成（零依赖）
+
+```
+1. 打开 FORMAT.md → 复制里面的"给 AI 的提示词"
+2. 粘贴你的研究发现
+3. AI 输出标准 JSON
+4. 放到 entries/ → 提 PR
+```
+
+**不需要装任何东西。** 只要你有研究发现（哪怕是在别的 AI 工具上探索出来的），把 FORMAT.md + demo_entry.json 扔给 AI，说"按这个格式整理我的发现"。
+
 ## 怎么提交
 
 ```
-1. 用 Polaris 跑完课题 → GATE 7 产出 JSON
+1. 准备好你的 JSON
 2. Fork 本仓库 → 放到 entries/
 3. 提 PR → 自动校验 → 合入
 ```

@@ -1,0 +1,118 @@
+{
+  "_note": "这是示范条目。基于1905年狭义相对论的历史案例。如果你的AI产出了科研成果，按这个格式交。",
+
+  "project": {
+    "id": "DEMO-001",
+    "title": "光速不变与伽利略相对性的矛盾——狭义相对论",
+    "domain": "gr-qc",
+    "contradiction_type": "hidden-assumption",
+    "tags": ["symmetry", "spacetime-geometry", "lorentz-transformation"],
+    "selector_strategy": "S1",
+    "hidden_assumption": "同时性是绝对的——所有惯性系共享同一时间坐标",
+    "date": "1905-06-30",
+    "status": "已解决（历史案例）",
+    "rounds": 1,
+    "contributor": {
+      "orcid": "0000-0002-1825-0097",
+      "github": "demo-user",
+      "name": "Albert Einstein（示范）"
+    }
+  },
+
+  "contradiction": {
+    "proposition_A": "麦克斯韦方程组给出真空光速 c = 1/sqrt(epsilon_0 * mu_0) 为常数，与观察者运动无关",
+    "proposition_B": "伽利略相对性原理要求速度叠加：观察者运动时测得的光速应为 c + v 或 c - v",
+    "why_not_both": "如果伽利略变换成立，不同惯性系中的麦克斯韦方程形式不同。光速不能同时是常数又满足速度叠加。",
+    "resolution": "放弃绝对同时性假设。用洛伦兹变换替代伽利略变换。光速在所有惯性系中为常数，时空坐标混合。同时性是相对的：Delta t' = gamma * (Delta t - v * Delta x / c**2)"
+  },
+
+  "derivation_chain": [
+    {
+      "step": 1,
+      "description": "从麦克斯韦方程协变性要求出发，推导坐标变换",
+      "formulas": [
+        {
+          "label": "F1",
+          "expression": "x' = gamma * (x - v*t)",
+          "latex": "x' = \\gamma (x - vt)",
+          "variables": {"gamma": "Lorentz_factor", "v": "relative_velocity", "x": "position", "t": "time"},
+          "units": "m",
+          "derived_from": "光速不变 + 线性变换假设"
+        },
+        {
+          "label": "F2",
+          "expression": "t' = gamma * (t - v*x/c**2)",
+          "latex": "t' = \\gamma (t - vx/c^2)",
+          "variables": {"gamma": "Lorentz_factor", "v": "velocity", "c": "speed_of_light"},
+          "units": "s",
+          "derived_from": "F1 + 光速不变约束"
+        }
+      ],
+      "assumptions": ["光速不变", "时空均匀", "变换线性"],
+      "validation": {"dimensions": "PASS", "limits": "v/c -> 0 退化为伽利略变换: PASS"}
+    }
+  ],
+
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "同时性是相对的——不同惯性系中同时发生的事件在一个系中可能不同时",
+      "confidence": 1.0,
+      "status": "survived",
+      "evidence_for": ["Lorentz变换的Δt'公式直接给出", "已被无数实验验证"],
+      "evidence_against": []
+    },
+    {
+      "id": "C2",
+      "statement": "光速在所有惯性系中为常数，是速度的上限",
+      "confidence": 1.0,
+      "status": "survived",
+      "evidence_for": ["Michelson-Morley零结果", "所有后续实验"],
+      "evidence_against": []
+    },
+    {
+      "id": "C3",
+      "statement": "存在绝对静止的以太参考系",
+      "confidence": 0.0,
+      "status": "killed",
+      "killed_by": "Michelson-Morley零结果 + 狭义相对论不需要以太",
+      "evidence_against": ["Michelson-Morley (1887)零结果", "任何寻找以太风的实验均为零"],
+      "lesson": "隐藏假设（同时性绝对）被推翻，不需要额外实体（以太）来解释光传播"
+    }
+  ],
+
+  "predictions": [
+    {
+      "id": "P1",
+      "statement": "高速运动粒子的寿命延长",
+      "type": "experimentally_testable",
+      "observable": "muon lifetime at rest vs in flight",
+      "expected_values": {
+        "at_rest": {"value": 2.2e-6, "uncertainty": 0.1e-6, "unit": "s"},
+        "in_flight_0.99c": {"value": 1.56e-5, "uncertainty": 0.1e-5, "unit": "s"}
+      },
+      "measurement_conditions": "宇宙线muon观测, v≈0.99c",
+      "verified": true,
+      "verified_by": "Rossi & Hall (1941)"
+    }
+  ],
+
+  "lessons": [
+    {
+      "category": "method",
+      "lesson": "不需要复杂实验装置——质疑一个所有人都默认的前提（同时性绝对），用已有的实验数据（Michelson-Morley）就够了",
+      "applicable_to": "所有S1（隐藏假设）类型的课题"
+    },
+    {
+      "category": "prior_art",
+      "lesson": "Lorentz和Poincare已经推导出变换公式，但保留了以太和绝对同时性的物理解释。数学正确但物理理解错误。区分'数学先行'和'物理突破'",
+      "applicable_to": "当INSPECTOR发现数学上已被'先发'时，检查物理理解是否仍然原创"
+    }
+  ],
+
+  "references": [
+    {"doi": "10.1002/andp.19053221004", "label": "Einstein 1905", "role": "foundation"},
+    {"label": "Michelson-Morley 1887", "journal": "Am. J. Sci. 34, 333", "role": "contradiction"},
+    {"label": "Lorentz 1904", "journal": "Proc. Acad. Sci. Amsterdam 6, 809", "role": "prior_art"}
+  ]
+}
