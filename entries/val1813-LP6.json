@@ -1,0 +1,246 @@
+{
+  "polaris_version": "1.0",
+  "project": {
+    "id": "val1813-LP6",
+    "title": "Black-hole islands as bounded recovery bookkeeping rather than independent Lorentzian transport",
+    "domain": "hep-th",
+    "contradiction_type": "hidden-assumption",
+    "tags": [
+      "black-hole-information",
+      "islands",
+      "replica-wormholes",
+      "boundary-algebra",
+      "bms"
+    ],
+    "selector_strategy": "S1",
+    "hidden_assumption": "Recovering the Page curve by island formula automatically supplies a microscopic unitary transport mechanism for Hawking radiation.",
+    "date": "2026-06-03",
+    "status": "low-confidence-bounded-closure",
+    "rounds": 2,
+    "contributor": {
+      "orcid": "",
+      "github": "val1813",
+      "name": "val1813"
+    }
+  },
+  "contradiction": {
+    "proposition_A": "Island formula, replica wormholes, and Hayden-Preskill scrambling solve the black-hole information problem by giving a unitary encoding description.",
+    "proposition_B": "Page-curve recovery and entropic bookkeeping do not by themselves give a microscopic Lorentzian mechanism that transports information into Hawking radiation.",
+    "why_not_both": "A correct entropy curve can be compatible with algebraic recovery while leaving the operational transport channel or boundary algebra choice unresolved.",
+    "resolution": "The reliable result is bounded and low-confidence at the LP level. LP6-S3 gives an L1 boundary-algebra separation proposition: narrow boundary algebra can show an O(1) relative-entropy gap, while wide radiation/bath algebra makes the gap recovery-error controlled. LP6-S1 and Round 1-2 materials strengthen skepticism for flat-space islands, but audits prevent a global no-go theorem."
+  },
+  "derivation_chain": [
+    {
+      "step": 1,
+      "description": "Boundary algebra choice controls the relative-entropy gap in post-Page SYK/JT code subspace.",
+      "formulas": [
+        {
+          "label": "F1",
+          "expression": "Delta_narrow = S_rel(rho_full, sigma_full) - S_rel(E_bdy(rho_full), E_bdy(sigma_full))",
+          "variables": {
+            "Delta_narrow": "relative_entropy_gap_for_narrow_boundary_algebra",
+            "S_rel": "relative_entropy",
+            "rho_full": "full_state",
+            "sigma_full": "reference_state",
+            "E_bdy": "conditional_expectation_or_boundary_restriction"
+          },
+          "units": "dimensionless"
+        },
+        {
+          "label": "F2",
+          "expression": "0 <= Delta_wide <= f(epsilon_N)",
+          "variables": {
+            "Delta_wide": "relative_entropy_gap_for_wide_radiation_bath_algebra",
+            "epsilon_N": "approximate_recovery_error",
+            "f": "unknown_error_bound_function"
+          },
+          "units": "dimensionless"
+        }
+      ],
+      "assumptions": [
+        "post-Page SYK/JT code subspace",
+        "Petz or approximate recovery language applies",
+        "f(epsilon_N) is qualitative and not explicitly bounded"
+      ],
+      "validation": {
+        "dimensions": "PASS",
+        "status": "L1 proposition, not L2 theorem"
+      }
+    },
+    {
+      "step": 2,
+      "description": "Flat-space island obstruction is framed as BMS/dressing tension rather than a proven global no-go.",
+      "formulas": [
+        {
+          "label": "F3",
+          "expression": "delta_f_A_ren/(4*G_N) + delta_f_S_bulk",
+          "variables": {
+            "delta_f_A_ren": "BMS_variation_of_renormalized_area",
+            "G_N": "Newton_constant",
+            "delta_f_S_bulk": "BMS_variation_of_bulk_entropy"
+          },
+          "units": "dimensionless"
+        }
+      ],
+      "assumptions": [
+        "BMS-invariant QES condition is required for the tested flat-space island construction",
+        "sector mixing assumption A6 remains open"
+      ],
+      "validation": {
+        "dimensions": "PASS",
+        "audit": "negation theorem downgraded to structural obstacle analysis"
+      }
+    }
+  ],
+  "validation": {
+    "dimension_checks": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0
+    },
+    "prior_art_search": {
+      "performed": true,
+      "tool": "project reviewer and audit files",
+      "found": [
+        "Penington 2019",
+        "Almheiri et al. 2019",
+        "Antonini et al. 2025",
+        "Geng et al. 2022/2026",
+        "Connes 1976",
+        "CPW 2022"
+      ],
+      "impact": "Strong prior-art overlap and unresolved assumptions require low-confidence bounded wording."
+    }
+  },
+  "source_files": [
+    "D:/Claude/ai-reservations/LP6-黑洞信息/synthesis/PI综合_round1.md",
+    "D:/Claude/ai-reservations/LP6-黑洞信息/synthesis/PI综合_round2.md",
+    "D:/Claude/ai-reservations/LP6-BlackHoleInfo/LP6-S1_MasslessGravity-Island/synthesis/总结.md",
+    "D:/Claude/ai-reservations/LP6-BlackHoleInfo/LP6-S1_MasslessGravity-Island/synthesis/审计与审稿记录.md",
+    "D:/Claude/ai-reservations/LP6-BlackHoleInfo/LP6-S3_Hawking-Encoding/synthesis/总结.md",
+    "D:/Claude/ai-reservations/LP6-BlackHoleInfo/LP6-S3_Hawking-Encoding/synthesis/收官审计报告.md",
+    "D:/Claude/ai-reservations/knowledge_graph/Hawking-Encoding_v1_20260601.json"
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "Island formula can support algebraic recovery/bookkeeping without by itself supplying an independent Lorentzian transport mechanism.",
+      "confidence": 0.62,
+      "status": "survived",
+      "evidence_for": [
+        "LP6-S3 summary and audit explicitly state recovery/bookkeeping rather than transport mechanism",
+        "knowledge graph records narrow/wide algebra separation"
+      ],
+      "evidence_against": [
+        "This is L1 conceptual proposition, not an L2 theorem"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "Flat-space operational island constructions face structural BMS and algebraic obstacles.",
+      "confidence": 0.45,
+      "status": "survived",
+      "evidence_for": [
+        "LP6-S1 summary lists C1-C2 tension and Geng operator-level obstacle",
+        "Round 1-2 PI synthesis says proposition B is strengthened"
+      ],
+      "evidence_against": [
+        "Reviewer audit reports prior-art overlap, A6 unverified, and conflict with positive island calculations"
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "LP6 proves that island formula is wrong or that the Page curve is false.",
+      "confidence": 0.0,
+      "status": "killed",
+      "killed_by": "LP6-S3 closure audit",
+      "evidence_against": [
+        "S3 explicitly does not deny island entropy formula or Page curve",
+        "wide algebra can support approximate recovery/bookkeeping"
+      ]
+    },
+    {
+      "id": "C4",
+      "statement": "C1-C2 incompatibility is a global L2 no-go theorem for all islands.",
+      "confidence": 0.0,
+      "status": "killed",
+      "killed_by": "LP6-S1 audit and external reviewer",
+      "evidence_against": [
+        "A6 sector-mixing assumption is unverified",
+        "positive AdS/JT island calculations must be separately handled",
+        "claim downgraded to structural obstacle analysis"
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "id": "P1",
+      "statement": "A diagnostic Page-time dependence on detector celestial-sphere coverage would support boundary-algebra dependence.",
+      "observable": "Page-time or recovery quality as a function of angular radiation coverage",
+      "expected_values": {
+        "coverage_dependence": {
+          "value": "nonzero_if_boundary_algebra_limited",
+          "unit": "qualitative"
+        }
+      },
+      "measurement_conditions": "Theoretical toy models or analog code subspaces with tunable radiation/bath algebra."
+    },
+    {
+      "id": "P2",
+      "statement": "In wide-algebra toy models, the relative-entropy gap should scale with approximate recovery error rather than remain O(1).",
+      "observable": "Delta_wide versus epsilon_N",
+      "expected_values": {
+        "Delta_wide_upper_bound": {
+          "value": "f(epsilon_N)",
+          "unit": "dimensionless"
+        }
+      },
+      "measurement_conditions": "SYK/JT-inspired code subspace simulations with explicit decoder resources."
+    }
+  ],
+  "lessons": [
+    {
+      "category": "claim_control",
+      "lesson": "Entropy recovery, algebraic recovery, and microscopic Lorentzian transport must be kept distinct."
+    },
+    {
+      "category": "audit",
+      "lesson": "A claim with unverified sector-mixing assumptions and strong prior-art overlap must be registered as low-confidence L1, not a theorem."
+    },
+    {
+      "category": "prior_art",
+      "lesson": "Negative flat-space-island arguments must explicitly separate project increments from Geng-style operator and factorization arguments."
+    }
+  ],
+  "references": [
+    {
+      "doi": "10.1007/JHEP09(2020)002",
+      "label": "Penington 2020",
+      "role": "foundation"
+    },
+    {
+      "label": "Penington 2019 arXiv:1905.08255",
+      "role": "positive_prior_art"
+    },
+    {
+      "label": "Almheiri et al. 2019 arXiv:1905.08762",
+      "role": "positive_prior_art"
+    },
+    {
+      "label": "Antonini et al. 2025 arXiv:2506.04311",
+      "role": "contradiction"
+    },
+    {
+      "label": "Geng et al. 2022 arXiv:2107.03390",
+      "role": "prior_art"
+    },
+    {
+      "label": "Geng et al. 2026 arXiv:2602.06543",
+      "role": "prior_art"
+    },
+    {
+      "label": "Connes 1976 Type III classification (no DOI in source files)",
+      "role": "foundation"
+    }
+  ]
+}

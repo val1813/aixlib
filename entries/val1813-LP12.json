@@ -1,0 +1,123 @@
+{
+  "polaris_version": "1.0",
+  "project": {
+    "id": "val1813-LP12",
+    "title": "Quantum scars close as constrained subspace dynamics rather than generic ETH violation",
+    "domain": "quant-ph",
+    "contradiction_type": "hidden-assumption",
+    "tags": [
+      "quantum-scar",
+      "thermalization",
+      "PXP"
+    ],
+    "selector_strategy": "archive-closeout",
+    "hidden_assumption": "Long-lived revivals imply a broad failure of ETH",
+    "date": "2026-06-04",
+    "status": "SOP closeout from existing archive",
+    "rounds": 3,
+    "contributor": {
+      "orcid": "",
+      "github": "val1813",
+      "name": "val1813"
+    }
+  },
+  "contradiction": {
+    "proposition_A": "Long-lived revivals imply a broad failure of ETH",
+    "proposition_B": "Constrained Hilbert-space structure and approximate algebras can create exceptional nonthermal states",
+    "why_not_both": "The archive frames these as mutually constraining claims; the closeout keeps only the bounded part that survived inspection.",
+    "resolution": "The closeout preserves scar classification and kills generic ETH-failure claims."
+  },
+  "derivation_chain": [
+    {
+      "step": 1,
+      "description": "Minimal closeout formula extracted or normalized from the archived synthesis line.",
+      "formulas": [
+        {
+          "label": "F1",
+          "expression": "F(t) = Abs(<psi0|exp(-I*H*t)|psi0>)**2",
+          "variables": {
+            "F": "revival_fidelity",
+            "psi0": "initial_state",
+            "H": "Hamiltonian",
+            "t": "time"
+          },
+          "units": "dimensionless"
+        }
+      ],
+      "assumptions": [
+        "Uses existing LP archive materials as source evidence",
+        "Claim is bounded to the stated regime"
+      ],
+      "validation": {
+        "dimensions": "PASS_or_archival_PASS",
+        "archive_closeout": true
+      }
+    }
+  ],
+  "validation": {
+    "dimension_checks": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "prior_art_search": {
+      "performed": true,
+      "tool": "archived SOP reports plus registry closeout pass"
+    },
+    "archive_basis": "D:/Claude/ai-reservations/LP12-QuantumScar/LP12-synthesis/LP????.md; LP12-????/synthesis/closeout.md"
+  },
+  "source_files": "D:/Claude/ai-reservations/LP12-QuantumScar/LP12-synthesis/LP????.md; LP12-????/synthesis/closeout.md",
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "PXP/scar classification survived.",
+      "confidence": 0.67,
+      "status": "survived",
+      "evidence_for": [
+        "Existing synthesis/closeout material supports this bounded claim"
+      ],
+      "evidence_against": [
+        "Not promoted to final theorem without fresh external re-audit"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "Generic nonthermalization of the full spectrum is killed. ",
+      "confidence": 0.0,
+      "status": "killed",
+      "killed_by": "SOP closeout bounded the original stronger claim",
+      "evidence_against": [
+        "Archived reviewer/auditor or synthesis material records boundary, prior-art risk, or insufficient derivation"
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "id": "P1",
+      "statement": "Perturbations that break the approximate algebra suppress revivals",
+      "observable": "revival fidelity",
+      "expected_values": {
+        "value": "decreasing_with_perturbation",
+        "unit": "dimensionless"
+      },
+      "measurement_conditions": "Rydberg/PXP-like constrained chain"
+    }
+  ],
+  "lessons": [
+    {
+      "category": "method",
+      "lesson": "Archive closeout must preserve both surviving bounded claims and killed overclaims."
+    },
+    {
+      "category": "review",
+      "lesson": "This registry entry is a knowledge-graph closeout, not a replacement for a fresh publication-grade referee cycle."
+    }
+  ],
+  "references": [
+    {
+      "doi": "10.1038/nature24622",
+      "label": "Bernien et al. 2017",
+      "role": "foundation"
+    }
+  ]
+}

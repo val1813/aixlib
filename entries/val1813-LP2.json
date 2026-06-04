@@ -1,0 +1,154 @@
+{
+  "polaris_version": "1.0",
+  "project": {
+    "id": "val1813-LP2",
+    "title": "Planckian dissipation: cuprate-family regularity and cross-family undecidability",
+    "domain": "cond-mat.str-el",
+    "contradiction_type": "hidden-assumption",
+    "tags": ["planckian-dissipation", "strange-metals", "meta-analysis", "effective-mass"],
+    "selector_strategy": "S1",
+    "hidden_assumption": "The clustering of alpha near one is a prescription-independent universal observable.",
+    "date": "2026-06-03",
+    "status": "bounded-closure",
+    "rounds": 5,
+    "contributor": {
+      "orcid": "",
+      "github": "val1813",
+      "name": "val1813"
+    }
+  },
+  "contradiction": {
+    "proposition_A": "Planckian dissipation tau = alpha*hbar/(k_B*T) with alpha near one is a universal dynamical principle.",
+    "proposition_B": "The apparent alpha clustering can be produced or obscured by effective-mass prescriptions, material-family selection, and multiple mechanisms.",
+    "why_not_both": "A prescription-independent universal bound requires alpha to be robust across extraction conventions and families; the project materials show family and m* prescription dependence.",
+    "resolution": "Cuprates can show family-level regularity, but cross-family universality is not decidable with current data. The stable contribution is a diagnostic critique and roadmap for m*-independent tests."
+  },
+  "derivation_chain": [
+    {
+      "step": 1,
+      "description": "Planckian alpha extraction depends on the transport scattering rate and effective-mass convention.",
+      "formulas": [
+        {
+          "label": "F1",
+          "expression": "alpha = hbar/(k_B*T*tau)",
+          "variables": {
+            "alpha": "Planckian_coefficient",
+            "hbar": "reduced_Planck_constant",
+            "k_B": "Boltzmann_constant",
+            "T": "temperature",
+            "tau": "transport_relaxation_time"
+          },
+          "units": "dimensionless"
+        },
+        {
+          "label": "F2",
+          "expression": "rho = m_star/(n*e**2*tau)",
+          "variables": {
+            "rho": "resistivity",
+            "m_star": "effective_mass",
+            "n": "carrier_density",
+            "e": "electron_charge",
+            "tau": "transport_relaxation_time"
+          },
+          "units": "ohm*m"
+        }
+      ],
+      "assumptions": ["Drude extraction is used for alpha", "m_star and n are not uniquely prescribed across families"],
+      "validation": {"dimensions": "PASS", "caveat": "m_star prescription changes alpha directly through tau"}
+    },
+    {
+      "step": 2,
+      "description": "Cross-prescription dispersion can exceed within-prescription dispersion.",
+      "formulas": [
+        {
+          "label": "F3",
+          "expression": "R_alpha = alpha_prescription_A/alpha_prescription_B",
+          "variables": {
+            "R_alpha": "same_material_prescription_ratio",
+            "alpha_prescription_A": "alpha_using_QO_mass_or_equivalent",
+            "alpha_prescription_B": "alpha_using_A_coefficient_mass_or_equivalent"
+          },
+          "units": "dimensionless"
+        }
+      ],
+      "assumptions": ["Same-material comparisons are more diagnostic than cross-material pooling"],
+      "validation": {"magnitude": "CeCoIn5 same-material difference reported as about 22x in synthesis"}
+    }
+  ],
+  "validation": {
+    "dimension_checks": {"total": 3, "passed": 3, "failed": 0},
+    "prior_art_search": {
+      "performed": true,
+      "tool": "project synthesis and closure audit",
+      "found": ["Taupin & Paschen 2022", "Cavanagh-Jacko-Powell 2015", "Shekhter et al. 2024", "Gleis et al. 2025"],
+      "impact": "m* prescription concern and KW-ratio nonuniversality have prior-art overlap; project increment is quantitative cross-family diagnosis and roadmap."
+    }
+  },
+  "source_files": [
+    "D:/Claude/ai-reservations/LP2-Planckian/LP2-synthesis/长命题综合.md",
+    "D:/Claude/ai-reservations/LP2-Planckian/synthesis/GATE5_closure.md",
+    "D:/Claude/ai-reservations/LP2-Planckian/LP2-synthesis/北极星溶解风险审计.md",
+    "D:/Claude/ai-reservations/LP2-Planckian/LP2-synthesis/审计与审稿记录.md"
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "Planckian alpha near one is plausible within the cuprate family but cross-family universality is currently undecidable.",
+      "confidence": 0.78,
+      "status": "survived",
+      "evidence_for": ["GATE5 closure states cuprate alpha about 1.0-1.2 and cross-family boundary", "long synthesis states cuprate-family result does not extend to heavy fermion, organic, or MATBG families"],
+      "evidence_against": ["GATE5 and long synthesis use different emphasis; both remain bounded rather than universal"]
+    },
+    {
+      "id": "C2",
+      "statement": "Effective-mass prescription dependence is a serious obstacle to interpreting alpha as a prescription-independent universal quantity.",
+      "confidence": 0.86,
+      "status": "survived",
+      "evidence_for": ["long synthesis reports CeCoIn5 same-material 22x prescription difference and BF=8e7", "Taupin & Paschen prior-art overlap noted in audit"],
+      "evidence_against": ["Within a fixed prescription, the synthesis reports weaker dispersion"]
+    },
+    {
+      "id": "C3",
+      "statement": "The project proves that Planckian dissipation is physically meaningless or false.",
+      "confidence": 0.0,
+      "status": "killed",
+      "killed_by": "LP2 synthesis explicitly positions the result as a boundary on evidence, not a negation of Planckian physics",
+      "evidence_against": ["Cuprate family evidence survives", "multiple theoretical mechanisms can generate alpha near one"]
+    },
+    {
+      "id": "C4",
+      "statement": "KW ratio is a complete m*-independent replacement for alpha.",
+      "confidence": 0.05,
+      "status": "killed",
+      "killed_by": "LP2 S3 synthesis in long-proposition summary",
+      "evidence_against": ["KW ratio cross-material dispersion is reported larger than alpha dispersion", "Cavanagh-Jacko-Powell prior art already showed multi-band KW nonuniversality"]
+    }
+  ],
+  "predictions": [
+    {
+      "id": "P1",
+      "statement": "A same-material, two-prescription extraction should produce larger alpha shifts in heavy-fermion systems than within cuprates.",
+      "observable": "R_alpha = alpha_A/alpha_B",
+      "expected_values": {"CeCoIn5_reference_ratio": {"value": 22, "uncertainty": 5, "unit": "dimensionless"}},
+      "measurement_conditions": "Use matched transport data and explicitly compare QO-mass and A-coefficient-mass prescriptions."
+    },
+    {
+      "id": "P2",
+      "statement": "m*-independent relaxation observables should be required before cross-family universality can be decided.",
+      "observable": "eta_over_s or spectral_function_half_width",
+      "expected_values": {"minimum_family_coverage": {"value": 5, "uncertainty": 2, "unit": "materials_or_families"}},
+      "measurement_conditions": "Measure representative cuprate, iron-based, heavy-fermion, organic, and moire systems with a shared protocol."
+    }
+  ],
+  "lessons": [
+    {"category": "data", "lesson": "Separate within-prescription clustering from cross-prescription uncertainty before claiming universality."},
+    {"category": "prior_art", "lesson": "Prescription-dependence and KW-ratio caveats were not wholly new; registry claims should emphasize quantitative synthesis and roadmap value."},
+    {"category": "method", "lesson": "When the observable is extraction-dependent, the scientific output can be a decidability boundary rather than a positive theorem."}
+  ],
+  "references": [
+    {"doi": "10.3390/cryst12020251", "label": "Taupin & Paschen 2022", "role": "prior_art"},
+    {"doi": "10.1103/PhysRevB.92.195138", "label": "Cavanagh, Jacko & Powell 2015", "role": "prior_art"},
+    {"label": "Shekhter et al. 2024 arXiv:2406.12133", "role": "support"},
+    {"doi": "10.1103/PhysRevLett.134.106501", "label": "Gleis et al. 2025", "role": "support"}
+  ]
+}

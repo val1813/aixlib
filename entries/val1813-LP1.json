@@ -1,0 +1,164 @@
+{
+  "polaris_version": "1.0",
+  "project": {
+    "id": "val1813-LP1",
+    "title": "2D MBL stability is disorder-type dependent: percolation blockade and Diophantine protection",
+    "domain": "cond-mat.dis-nn",
+    "contradiction_type": "hidden-assumption",
+    "tags": ["many-body-localization", "avalanche", "percolation", "diophantine-approximation"],
+    "selector_strategy": "S1",
+    "hidden_assumption": "The stability of 2D MBL can be decided by a single avalanche argument independent of disorder structure.",
+    "date": "2026-05-31",
+    "status": "bounded-closure",
+    "rounds": 4,
+    "contributor": {
+      "orcid": "",
+      "github": "val1813",
+      "name": "val1813"
+    }
+  },
+  "contradiction": {
+    "proposition_A": "Strong disorder in two dimensions can support an MBL-like stable phase.",
+    "proposition_B": "In two dimensions thermal inclusions trigger avalanches that destroy MBL in the thermodynamic limit.",
+    "why_not_both": "If avalanches always percolate, stable 2D MBL is excluded; if thermalization is blocked or seeds are bounded, the universal avalanche no-go is too strong.",
+    "resolution": "Both claims survive only with boundaries. Quasiperiodic badly approximable potentials have literature-supported strong stability with this project adding Diophantine classification and explicit bounds. Random disorder is not strictly stable in the infinite-time sense but can be operationally stable when many-body thermalization percolation is blocked."
+  },
+  "derivation_chain": [
+    {
+      "step": 1,
+      "description": "Percolation blockade separates random-disorder operational stability from DRH thermalization.",
+      "formulas": [
+        {
+          "label": "F1",
+          "expression": "xi_perc = abs(p_block - p_c)**(-nu)",
+          "variables": {
+            "xi_perc": "percolation_correlation_length",
+            "p_block": "density_of_many_body_thermalization_blocks",
+            "p_c": "2D_site_percolation_threshold",
+            "nu": "percolation_exponent_4_over_3"
+          },
+          "units": "lattice_spacing"
+        },
+        {
+          "label": "F2",
+          "expression": "tau_MBL = tau_0*exp(alpha*L)",
+          "variables": {
+            "tau_MBL": "metastable_MBL_lifetime",
+            "tau_0": "microscopic_time",
+            "alpha": "positive_blockade_exponent",
+            "L": "linear_system_size"
+          },
+          "units": "s"
+        }
+      ],
+      "assumptions": ["2D site-percolation universality", "positive local tunneling cost", "random disorder has finite rare-region probability"],
+      "validation": {"dimensions": "PASS", "limits": "p_block -> p_c gives diverging xi_perc"}
+    },
+    {
+      "step": 2,
+      "description": "Quasiperiodic stability is controlled by finite sojourn length for badly approximable beta.",
+      "formulas": [
+        {
+          "label": "F3",
+          "expression": "L_max <= 2*(M + 2)/epsilon",
+          "variables": {
+            "L_max": "maximum_low-potential_sojourn_length",
+            "M": "bounded_continued_fraction_coefficient",
+            "epsilon": "low-potential_window_fraction"
+          },
+          "units": "lattice_spacing"
+        },
+        {
+          "label": "F4",
+          "expression": "L_eff = L_max + 2*zeta_WPL*log(W/g)",
+          "variables": {
+            "L_eff": "Griffiths-corrected_effective_seed_length",
+            "zeta_WPL": "weak-potential-line_localization_length",
+            "W": "disorder_strength",
+            "g": "coupling"
+          },
+          "units": "lattice_spacing"
+        }
+      ],
+      "assumptions": ["separable quasiperiodic potential", "badly approximable beta", "2D sufficient-condition decomposition"],
+      "validation": {"dimensions": "PASS", "caveat": "Griffiths tail can downgrade strict stability to operational stability"}
+    }
+  ],
+  "validation": {
+    "dimension_checks": {"total": 4, "passed": 4, "failed": 0},
+    "prior_art_search": {
+      "performed": true,
+      "tool": "project synthesis and reviewer records",
+      "found": ["Strkalj-Doggen-Castelnovo 2022", "Agrawal-Panda-Huse 2022", "Tu-Vu-Das Sarma 2023"],
+      "impact": "Core quasiperiodic-MBL stability is prior art; project increment is classification, explicit bounds, and cooperative-avalanche exclusions."
+    }
+  },
+  "source_files": [
+    "D:/Claude/ai-reservations/knowledge_graph/LP1-MBL2D_v1_20260531.json",
+    "D:/Claude/ai-reservations/LP1-MBL2D/LP1-S3_MBL-Quasiperiodic/synthesis/LP1-综合推导.md",
+    "D:/Claude/ai-reservations/LP1-MBL2D/LP1-S1_MBL-Avalanche/synthesis/总结.md",
+    "D:/Claude/ai-reservations/LP1-MBL2D/LP1-S2_MBL-RareRegion/synthesis/总结.md",
+    "D:/Claude/ai-reservations/LP1-MBL2D/LP1-S3_MBL-Quasiperiodic/synthesis/审计与审稿记录.md"
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "2D MBL stability is controlled by disorder type and many-body thermalization percolation, not by a single universal avalanche answer.",
+      "confidence": 0.82,
+      "status": "survived",
+      "evidence_for": ["LP1 knowledge graph records p_block vs p_c as the order parameter", "S1-S3 synthesis gives random/quasiperiodic phase distinction"],
+      "evidence_against": ["Strict random-disorder stability is not claimed"]
+    },
+    {
+      "id": "C2",
+      "statement": "Badly approximable quasiperiodic potentials support strong MBL stability; the project increment is Diophantine classification and explicit L_max bounds.",
+      "confidence": 0.72,
+      "status": "survived",
+      "evidence_for": ["S3 synthesis cites multiple prior works and adds L_max <= 2*(M+2)/epsilon", "knowledge graph records L_max << xi_perc as support"],
+      "evidence_against": ["Core physical conclusion is prior art", "2D decomposition is a sufficient condition and can be conservative by about a factor of two"]
+    },
+    {
+      "id": "C3",
+      "statement": "Quasiperiodic 2D MBL is rigorously and unconditionally strictly stable with tau_MBL = infinity.",
+      "confidence": 0.0,
+      "status": "killed",
+      "killed_by": "LP1 synthesis downgrade after prior-art and Griffiths-tail audit",
+      "evidence_against": ["WPL Griffiths correction L_eff = L_max + 2*zeta_WPL*log(W/g) may downgrade strict stability", "rank>2 and nonseparable potentials require separate audit"]
+    },
+    {
+      "id": "C4",
+      "statement": "Random 2D MBL is strictly stable in the thermodynamic infinite-time sense.",
+      "confidence": 0.05,
+      "status": "killed",
+      "killed_by": "LP1 synthesis distinguishes strict stability from operational stability",
+      "evidence_against": ["Random disorder allows rare thermal regions and eventual quantum tunneling", "only tau_MBL ~ exp(alpha*L) operational stability survives"]
+    }
+  ],
+  "predictions": [
+    {
+      "id": "P1",
+      "statement": "Well-approximable beta should show finite-size drift when system size reaches relevant continued-fraction denominators.",
+      "observable": "crossing-point drift in quasiperiodic MBL finite-size scaling",
+      "expected_values": {"q_5_example": {"value": 32, "uncertainty": 7, "unit": "sites"}},
+      "measurement_conditions": "Change beta away from golden ratio toward well-approximable values and compare L near q_n."
+    },
+    {
+      "id": "P2",
+      "statement": "Near p_block = p_c, thermalization fronts should show 2D percolation geometry.",
+      "observable": "front fractal dimension and activated dynamics",
+      "expected_values": {"d_f": {"value": 1.896, "uncertainty": 0.02, "unit": "dimensionless"}, "nu": {"value": 1.333, "uncertainty": 0.02, "unit": "dimensionless"}},
+      "measurement_conditions": "Random-disorder simulations or cold-atom experiments tuned close to the blockade threshold."
+    }
+  ],
+  "lessons": [
+    {"category": "prior_art", "lesson": "Separate literature-established core conclusions from project increments; quasiperiodic stability was not original to this project."},
+    {"category": "method", "lesson": "A sufficient-condition 2D reduction must be labeled as conservative and cannot be used as a necessary stability bound."},
+    {"category": "claim_control", "lesson": "Use operational stability for random disorder and avoid infinite-time strict-stability wording unless all rare-region and Griffiths channels are closed."}
+  ],
+  "references": [
+    {"doi": "10.1103/PhysRevB.106.184209", "label": "Strkalj, Doggen & Castelnovo 2022", "role": "prior_art"},
+    {"doi": "10.1103/PhysRevB.106.094206", "label": "Agrawal, Panda & Huse 2022", "role": "prior_art"},
+    {"doi": "10.1103/PhysRevB.107.014203", "label": "Tu, Vu & Das Sarma 2023", "role": "prior_art"},
+    {"label": "De Roeck-Huveneers avalanche framework (no DOI in source files)", "role": "foundation"}
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "polaris_version": "1.0",
+  "project": {
+    "id": "val1813-LP5",
+    "title": "DQCP is model-dependent: SU(2) J-Q is weakly first order while large-N remains open",
+    "domain": "cond-mat.str-el",
+    "contradiction_type": "theory-vs-theory",
+    "tags": [
+      "dqcp",
+      "weak-first-order",
+      "walking-rg",
+      "emergent-symmetry",
+      "complex-cft"
+    ],
+    "selector_strategy": "S1",
+    "hidden_assumption": "DQCP has a single yes/no answer about continuity independent of model class.",
+    "date": "2026-06-03",
+    "status": "bounded-closure",
+    "rounds": 5,
+    "contributor": {
+      "orcid": "",
+      "github": "val1813",
+      "name": "val1813"
+    }
+  },
+  "contradiction": {
+    "proposition_A": "DQCP is a true continuous transition beyond the Landau-Ginzburg-Wilson paradigm with emergent SO(5) behavior.",
+    "proposition_B": "The SU(2) J-Q DQCP is weakly first order, with pseudo-critical walking behavior.",
+    "why_not_both": "A specific SU(2) J-Q transition cannot be both truly continuous and weakly first order, although other model classes may realize different outcomes.",
+    "resolution": "For SU(2) J-Q the surviving conclusion is weak first order. The stronger claim that all DQCPs are weakly first order is not supported; SU(N>=8) and other classes remain possible continuous cases."
+  },
+  "derivation_chain": [
+    {
+      "step": 1,
+      "description": "Walking behavior occurs when the beta function lacks a real zero but has nearby complex fixed-point structure.",
+      "formulas": [
+        {
+          "label": "F1",
+          "expression": "beta_g = a*(g - g_star)**2 + b",
+          "variables": {
+            "beta_g": "renormalization_group_beta_function",
+            "g": "coupling",
+            "g_star": "nearby_pseudofixed_coupling",
+            "a": "curvature_parameter",
+            "b": "fixed_point_annihilation_offset"
+          },
+          "units": "dimensionless"
+        },
+        {
+          "label": "F2",
+          "expression": "xi = xi_0*exp(pi/sqrt(abs(b)))",
+          "variables": {
+            "xi": "walking_correlation_length",
+            "xi_0": "microscopic_length",
+            "b": "distance_from_real_fixed_point_annihilation"
+          },
+          "units": "lattice_spacing"
+        }
+      ],
+      "assumptions": [
+        "walking RG approximation",
+        "small positive offset from real fixed point"
+      ],
+      "validation": {
+        "dimensions": "PASS",
+        "caveat": "formula is a phenomenological walking template"
+      }
+    },
+    {
+      "step": 2,
+      "description": "Class-11 anticommutation constrains beta-function terms but does not force BKT walking.",
+      "formulas": [
+        {
+          "label": "F3",
+          "expression": "beta_g = Sum(c_(4*k + 1)*g**(4*k + 1), (k, 0, oo))",
+          "variables": {
+            "c_(4*k + 1)": "real_beta_coefficients",
+            "g": "coupling",
+            "k": "nonnegative_integer"
+          },
+          "units": "dimensionless"
+        }
+      ],
+      "assumptions": [
+        "{Q,C}=0 symmetry class",
+        "formal power-series beta function"
+      ],
+      "validation": {
+        "dimensions": "PASS",
+        "logic": "real fixed points are not symmetry-forbidden"
+      }
+    }
+  ],
+  "validation": {
+    "dimension_checks": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0
+    },
+    "prior_art_search": {
+      "performed": true,
+      "tool": "project synthesis and GATE5 closure",
+      "found": [
+        "Takahashi et al. L=1024 result",
+        "Zhu PRL 2026 extraordinary surface theory",
+        "Deng and D'Emidio-Sandvik entanglement analyses"
+      ],
+      "impact": "SU(2) weak-first-order conclusion relies heavily on existing numerical and theoretical evidence; project increment is convergence and boundary classification."
+    }
+  },
+  "source_files": [
+    "D:/Claude/ai-reservations/LP5-DQCP/LP5-synthesis/长命题综合.md",
+    "D:/Claude/ai-reservations/LP5-DQCP/synthesis/GATE5_closure.md",
+    "D:/Claude/ai-reservations/LP5-DQCP/LP5-S1_DQCP-Entanglement/synthesis/总结.md",
+    "D:/Claude/ai-reservations/LP5-DQCP/LP5-S4_DQCP-Complex/synthesis/总结.md",
+    "D:/Claude/ai-reservations/LP5-DQCP/LP5-S4_DQCP-Complex/synthesis/审计报告_v1v2.md"
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "The SU(2) J-Q DQCP is best classified as weakly first order.",
+      "confidence": 0.84,
+      "status": "survived",
+      "evidence_for": [
+        "LP5 synthesis reports three-line convergence",
+        "Takahashi L=1024 correlation result favors first order",
+        "GATE5 closure repeats SU(2) weak-first-order status"
+      ],
+      "evidence_against": [
+        "Entanglement evidence confirms Goldstone modes but does not alone distinguish continuous from pseudo-critical first order"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "DQCP behavior should be treated as a cross-model spectrum, not a single binary answer.",
+      "confidence": 0.76,
+      "status": "survived",
+      "evidence_for": [
+        "GATE5 states SU(N>=8) may be truly continuous",
+        "S4 says weak first order is dynamical and model-specific rather than symmetry-forced"
+      ],
+      "evidence_against": [
+        "Critical N is estimated rather than closed"
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "All DQCPs are weakly first order by symmetry necessity.",
+      "confidence": 0.0,
+      "status": "killed",
+      "killed_by": "LP5-S4 complex-DQCP analysis",
+      "evidence_against": [
+        "{Q,C}=0 permits real fixed points",
+        "SU(N>=8), loop models, and fermion models remain possible true-continuous cases"
+      ]
+    },
+    {
+      "id": "C4",
+      "statement": "Entanglement entropy alone proves the SU(2) J-Q transition is truly continuous.",
+      "confidence": 0.0,
+      "status": "killed",
+      "killed_by": "LP5 comprehensive synthesis",
+      "evidence_against": [
+        "b approximately 2 confirms Goldstone modes but cannot distinguish SO(5) CFT from pseudo-critical first order",
+        "Takahashi finite-size result favors weak first order"
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "id": "P1",
+      "statement": "SU(2) J-Q finite-size scaling should show pseudo-critical behavior up to xi between about 448 and 1024 before weak first-order signatures dominate.",
+      "observable": "correlation length and histogram structure",
+      "expected_values": {
+        "xi_min": {
+          "value": 448,
+          "unit": "lattice_spacing"
+        },
+        "xi_max": {
+          "value": 1024,
+          "unit": "lattice_spacing"
+        }
+      },
+      "measurement_conditions": "Large-scale simulations with correlated observable analysis."
+    },
+    {
+      "id": "P2",
+      "statement": "Increasing N should move DQCP candidates toward a genuinely continuous regime around N_c of order 8-10.",
+      "observable": "presence or absence of real RG fixed point and first-order histogram signatures",
+      "expected_values": {
+        "N_c": {
+          "value": 9,
+          "uncertainty": 2,
+          "unit": "dimensionless"
+        }
+      },
+      "measurement_conditions": "Compare SU(N) models across N with matched finite-size protocols."
+    }
+  ],
+  "lessons": [
+    {
+      "category": "scope",
+      "lesson": "A model-specific weak-first-order conclusion should not be promoted to a universal DQCP no-go theorem."
+    },
+    {
+      "category": "diagnostics",
+      "lesson": "Goldstone-mode evidence and continuity evidence are logically distinct."
+    },
+    {
+      "category": "prior_art",
+      "lesson": "When a later numerical result independently resolves a question, project novelty shifts toward synthesis and boundary classification."
+    }
+  ],
+  "references": [
+    {
+      "doi": "10.1103/PhysRevLett.98.227202",
+      "label": "Sandvik 2007",
+      "role": "foundation"
+    },
+    {
+      "label": "Takahashi et al. L=1024 DQCP study (no DOI in source files)",
+      "role": "support"
+    },
+    {
+      "label": "Zhu PRL 2026 extraordinary surface theory (no DOI in source files)",
+      "role": "support"
+    },
+    {
+      "label": "Deng entanglement analysis (no DOI in source files)",
+      "role": "prior_art"
+    },
+    {
+      "label": "D'Emidio-Sandvik entanglement analysis (no DOI in source files)",
+      "role": "prior_art"
+    }
+  ]
+}

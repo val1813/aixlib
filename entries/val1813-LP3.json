@@ -1,0 +1,228 @@
+{
+  "polaris_version": "1.0",
+  "project": {
+    "id": "val1813-LP3",
+    "title": "nu=5/2 bulk-edge tension resolves into a three-path boundary map",
+    "domain": "cond-mat.mes-hall",
+    "contradiction_type": "exp-vs-theory",
+    "tags": [
+      "fractional-quantum-hall",
+      "bulk-edge-correspondence",
+      "thermal-hall",
+      "domain-wall-percolation"
+    ],
+    "selector_strategy": "S1",
+    "hidden_assumption": "A single kappa_xy = 5/2 kappa_0 measurement uniquely fixes the nu=5/2 topological order.",
+    "date": "2026-06-01",
+    "status": "bounded-closure",
+    "rounds": 4,
+    "contributor": {
+      "orcid": "",
+      "github": "val1813",
+      "name": "val1813"
+    }
+  },
+  "contradiction": {
+    "proposition_A": "Bulk numerical evidence favors anti-Pfaffian or Pfaffian order at nu=5/2.",
+    "proposition_B": "Thermal Hall edge readout kappa_xy = 5/2 kappa_0 suggests a PH-Pfaffian-like response.",
+    "why_not_both": "Strict bulk-edge correspondence would map the bulk order directly to the edge thermal Hall response, so APf/Pf bulk and PHPf-like edge readout look inconsistent.",
+    "resolution": "The conflict is not resolved by one winning path. Edge reconstruction, smooth-disorder bulk-edge mapping, and Pf/APf domain-wall networks each survive with constraints. The output is a decision tree and boundary map, not a proof that bulk-edge correspondence is either globally false or globally exact."
+  },
+  "derivation_chain": [
+    {
+      "step": 1,
+      "description": "Thermal Hall conductance is central-charge weighted but can be altered by edge equilibration and channel gapping.",
+      "formulas": [
+        {
+          "label": "F1",
+          "expression": "kappa_xy = K*kappa_0",
+          "variables": {
+            "kappa_xy": "thermal_Hall_conductance",
+            "K": "net_chiral_central_charge_or_effective_readout",
+            "kappa_0": "pi**2*k_B**2*T/(3*h)"
+          },
+          "units": "W/K"
+        },
+        {
+          "label": "F2",
+          "expression": "kappa_0 = pi**2*k_B**2*T/(3*h)",
+          "variables": {
+            "k_B": "Boltzmann_constant",
+            "T": "temperature",
+            "h": "Planck_constant"
+          },
+          "units": "W/K"
+        }
+      ],
+      "assumptions": [
+        "linear thermal response",
+        "edge channel decomposition is protocol-dependent"
+      ],
+      "validation": {
+        "dimensions": "PASS",
+        "caveat": "kappa_xy_frac is an extracted operational quantity"
+      }
+    },
+    {
+      "step": 2,
+      "description": "Domain-wall path has a middle-disorder window bounded by no-network and class-D thermal-metal regimes.",
+      "formulas": [
+        {
+          "label": "F3",
+          "expression": "p_DW = Heaviside(E_dis_eff - E_bias)",
+          "variables": {
+            "p_DW": "domain_wall_network_activation_indicator",
+            "E_dis_eff": "effective_Pf_APf_bias_disorder",
+            "E_bias": "Pf_APf_energy_bias"
+          },
+          "units": "dimensionless"
+        }
+      ],
+      "assumptions": [
+        "effective disorder means projection into Pf/APf energy-bias channel",
+        "strong disorder can drive class-D thermal metal"
+      ],
+      "validation": {
+        "dimensions": "PASS",
+        "scope": "qualitative decision-boundary formula"
+      }
+    }
+  ],
+  "validation": {
+    "dimension_checks": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0
+    },
+    "prior_art_search": {
+      "performed": true,
+      "tool": "project synthesis and reviewer records",
+      "found": [
+        "APf edge theory",
+        "Yang mapping",
+        "Pf/APf domain-wall network literature"
+      ],
+      "impact": "The registry entry records a boundary integration of existing mechanisms, not a single new topological order."
+    }
+  },
+  "source_files": [
+    "D:/Claude/ai-reservations/LP3-Nu5half/LP3-综合收敛/synthesis/总结.md",
+    "D:/Claude/ai-reservations/LP3-Nu5half/LP3-综合收敛/synthesis/审计与审稿记录.md",
+    "D:/Claude/ai-reservations/knowledge_graph/Nu5o2-EdgeThermal_v2_20260531.json",
+    "D:/Claude/ai-reservations/LP3-Nu5half/LP3-S2_Nu5o2-Mapping/v1-bulk-edge-mapping/synthesis/总结.md",
+    "D:/Claude/ai-reservations/LP3-Nu5half/LP3-S3_DomainWall-Percolation/v1-domain-wall-network/synthesis/总结.md"
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "A PH-Pfaffian-like thermal Hall readout can coexist with APf-like bulk evidence only within constrained edge, mapping, or domain-wall scenarios.",
+      "confidence": 0.74,
+      "status": "survived",
+      "evidence_for": [
+        "LP3 synthesis lists three surviving bounded paths",
+        "Nu5o2 knowledge graph records APf edge parameter window and tradeoff"
+      ],
+      "evidence_against": [
+        "No single path is declared dominant"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "A single kappa_xy = 5/2 kappa_0 measurement is insufficient to decide the nu=5/2 bulk topological order.",
+      "confidence": 0.88,
+      "status": "survived",
+      "evidence_for": [
+        "S4 decision-experiment synthesis requires disorder series, side-gate scan, and bulk probe",
+        "audit downgraded kappa_xy_frac to an extracted operational quantity"
+      ],
+      "evidence_against": []
+    },
+    {
+      "id": "C3",
+      "statement": "Bulk-edge correspondence is globally refuted in nu=5/2 samples.",
+      "confidence": 0.0,
+      "status": "killed",
+      "killed_by": "LP3 comprehensive synthesis",
+      "evidence_against": [
+        "S2 mapping remains stable under experimentally relevant smooth long-range disorder",
+        "LP3 explicitly says there is insufficient basis to claim bulk-edge correspondence is overturned"
+      ]
+    },
+    {
+      "id": "C4",
+      "statement": "Pf/APf domain-wall percolation generically explains kappa_xy = 5/2 kappa_0 for arbitrary disorder.",
+      "confidence": 0.08,
+      "status": "killed",
+      "killed_by": "S3 boundary and reviewer audit",
+      "evidence_against": [
+        "Domain-wall path only survives in a narrow effective-disorder window",
+        "strong disorder can produce class-D thermal metal"
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "id": "P1",
+      "statement": "If the domain-wall path is active, K = 5/2 should be strongest at intermediate effective disorder and degrade toward thermal metal at strong disorder.",
+      "observable": "thermal Hall conductance and longitudinal thermal conductance across a disorder series",
+      "expected_values": {
+        "K_mid_disorder": {
+          "value": 2.5,
+          "uncertainty": 0.2,
+          "unit": "kappa_0"
+        },
+        "kappa_xx_strong_disorder": {
+          "value": "increases",
+          "unit": "qualitative"
+        }
+      },
+      "measurement_conditions": "Compare intentionally varied disorder samples at the same filling and temperature protocol."
+    },
+    {
+      "id": "P2",
+      "statement": "Side-gate scans should correlate total kappa_xy, extracted fractional-channel response, and equilibration length if edge reconstruction is the dominant path.",
+      "observable": "kappa_xy, extracted fractional channel, edge equilibration length",
+      "expected_values": {
+        "correlation": {
+          "value": 1,
+          "uncertainty": 0.3,
+          "unit": "rank-correlation_sign"
+        }
+      },
+      "measurement_conditions": "Systematic side-gate tuning with fixed bulk density where possible."
+    }
+  ],
+  "lessons": [
+    {
+      "category": "observable",
+      "lesson": "Do not treat an extracted fractional thermal Hall component as a fundamental independent observable without the subtraction and loss protocol."
+    },
+    {
+      "category": "method",
+      "lesson": "When several mechanisms survive with different caveats, the output should be an experimental decision tree rather than a single-path declaration."
+    },
+    {
+      "category": "claim_control",
+      "lesson": "A bulk-edge tension is not equivalent to a global no-go for bulk-edge correspondence."
+    }
+  ],
+  "references": [
+    {
+      "doi": "10.1038/nature26154",
+      "label": "Banerjee et al. 2018",
+      "role": "foundation"
+    },
+    {
+      "label": "Yang mapping literature cited in LP3 files (no DOI in source files)",
+      "role": "foundation"
+    },
+    {
+      "label": "APf/Pf edge thermal Hall literature cited in LP3 files (no DOI in source files)",
+      "role": "foundation"
+    },
+    {
+      "label": "Pf/APf domain-wall percolation literature cited in LP3 files (no DOI in source files)",
+      "role": "support"
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "polaris_version": "1.0",
+  "project": {
+    "id": "val1813-LP4",
+    "title": "Many-body NHSE has a structural mother framework but no sector-independent invariant",
+    "domain": "cond-mat.stat-mech",
+    "contradiction_type": "hidden-assumption",
+    "tags": [
+      "non-hermitian",
+      "nhse",
+      "lindblad",
+      "stinespring",
+      "sector-resolved"
+    ],
+    "selector_strategy": "S1",
+    "hidden_assumption": "A single sector-independent topological invariant should classify all many-body NHSE behavior.",
+    "date": "2026-06-01",
+    "status": "bounded-closure",
+    "rounds": 3,
+    "contributor": {
+      "orcid": "",
+      "github": "val1813",
+      "name": "val1813"
+    }
+  },
+  "contradiction": {
+    "proposition_A": "A unified description of non-Hermitian many-body skin effect exists.",
+    "proposition_B": "Sector and density dependence prevent a single invariant from classifying NHSE in all sectors.",
+    "why_not_both": "If unity is interpreted as one scalar invariant, sector dependence kills it; if unity is structural, a Stinespring mother framework can still organize the problem.",
+    "resolution": "The surviving object is a three-layer map: structural Stinespring framework, density-resolved diagnostics, and boundary caveats. The original sector-independent invariant claim fails."
+  },
+  "derivation_chain": [
+    {
+      "step": 1,
+      "description": "Stinespring mother-space interpolation organizes Lindbladian and postselected limits.",
+      "formulas": [
+        {
+          "label": "F1",
+          "expression": "gamma_c = 1 - (t_L - t_R)/G",
+          "variables": {
+            "gamma_c": "direction_reversal_crossover_parameter",
+            "t_L": "left_hopping",
+            "t_R": "right_hopping",
+            "G": "nonlocal_Lindblad_coupling_scale"
+          },
+          "units": "dimensionless"
+        }
+      ],
+      "assumptions": [
+        "nonlocal jump operator is available as a formal object",
+        "OBC finite-size checks approximate the thermodynamic trend"
+      ],
+      "validation": {
+        "dimensions": "PASS",
+        "numerical_anchor": "N=30 OBC direction reversal recorded in synthesis"
+      }
+    },
+    {
+      "step": 2,
+      "description": "Density-resolved diagnostic replaces the failed sector-independent invariant.",
+      "formulas": [
+        {
+          "label": "F2",
+          "expression": "D_rho = sign(x_cm_OBC(rho) - x_cm_PBC(rho))",
+          "variables": {
+            "D_rho": "density_resolved_directionality",
+            "x_cm_OBC": "center_of_mass_under_open_boundary_conditions",
+            "x_cm_PBC": "reference_center_of_mass_under_periodic_boundary_conditions",
+            "rho": "filling_fraction"
+          },
+          "units": "dimensionless"
+        }
+      ],
+      "assumptions": [
+        "sector filling is a resolved label",
+        "DR-NHDD is diagnostic rather than topological invariant"
+      ],
+      "validation": {
+        "dimensions": "PASS",
+        "caveat": "diagnostic layer is not a universal invariant"
+      }
+    }
+  ],
+  "validation": {
+    "dimension_checks": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0
+    },
+    "prior_art_search": {
+      "performed": true,
+      "tool": "project synthesis and closure audit",
+      "found": [
+        "NHSE topology literature in project files",
+        "Lindbladian/postselected NHSE frameworks"
+      ],
+      "impact": "Entry records bounded integration; physical implementation of nonlocal L_j remains open."
+    }
+  },
+  "source_files": [
+    "D:/Claude/ai-reservations/LP4-NHSE/LP4-synthesis/长命题综合.md",
+    "D:/Claude/ai-reservations/LP4-NHSE/LP4-synthesis/审计与审稿记录.md",
+    "D:/Claude/ai-reservations/knowledge_graph/LP4-NHSE_v1_20260601.json",
+    "D:/Claude/ai-reservations/LP4-NHSE/LP4-S1_NHSE-TopoUnify/synthesis/总结.md",
+    "D:/Claude/ai-reservations/LP4-NHSE/LP4-S2_NHSE-InfoInvariant/synthesis/总结.md",
+    "D:/Claude/ai-reservations/LP4-NHSE/LP4-S3_NHSE-PhaseDiagram/synthesis/总结.md"
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "A structural Stinespring mother framework can organize Lindbladian and postselected NHSE behavior.",
+      "confidence": 0.78,
+      "status": "survived",
+      "evidence_for": [
+        "LP4 synthesis states S1 mother framework and direction reversal",
+        "knowledge graph records gamma_c and N>1 confirmation"
+      ],
+      "evidence_against": [
+        "Physical implementation of nonlocal jump operators remains open"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "NHSE fate must be described in structural, diagnostic, and boundary layers.",
+      "confidence": 0.86,
+      "status": "survived",
+      "evidence_for": [
+        "S3 and closure audit explicitly require three-layer map",
+        "S1-S2-S3 consistency audit found no contradiction"
+      ],
+      "evidence_against": []
+    },
+    {
+      "id": "C3",
+      "statement": "The original QLIF-like construction is a sector-independent topological invariant for all NHSE behavior.",
+      "confidence": 0.0,
+      "status": "killed",
+      "killed_by": "LP4-S2 and LP4 closure audit",
+      "evidence_against": [
+        "S2 says original QLIF is not sector-independent",
+        "DR-NHDD is density-resolved and diagnostic"
+      ]
+    },
+    {
+      "id": "C4",
+      "statement": "LP4 fully solves experimental implementation of required nonlocal Lindblad operators.",
+      "confidence": 0.05,
+      "status": "killed",
+      "killed_by": "LP4 closure audit",
+      "evidence_against": [
+        "LP4-补2 physical implementation remains future work",
+        "finite-size/OBC/implementation caveats remain boundary layer"
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "id": "P1",
+      "statement": "Density-resolved NHSE directionality should change sign across filling sectors.",
+      "observable": "DR-NHDD directionality D_rho",
+      "expected_values": {
+        "low_filling": {
+          "value": 1,
+          "unit": "sign"
+        },
+        "high_filling": {
+          "value": -1,
+          "unit": "sign"
+        },
+        "transition_rho": {
+          "value": 0.75,
+          "uncertainty": 0.1,
+          "unit": "filling_fraction"
+        }
+      },
+      "measurement_conditions": "Finite chains under OBC with sector-resolved preparation or postselection."
+    },
+    {
+      "id": "P2",
+      "statement": "Increasing gamma toward the postselected limit should trigger mother-space direction reversal near gamma_c.",
+      "observable": "skin direction in mother-space OBC spectrum",
+      "expected_values": {
+        "gamma_c": {
+          "value": "1 - (t_L - t_R)/G",
+          "unit": "dimensionless"
+        }
+      },
+      "measurement_conditions": "Formal simulation or engineered open-system platform with controllable nonlocal jump coupling G."
+    }
+  ],
+  "lessons": [
+    {
+      "category": "abstraction",
+      "lesson": "A unifying structure and a unifying invariant are different claims; killing the latter does not kill the former."
+    },
+    {
+      "category": "implementation",
+      "lesson": "Formal Lindblad operators should not be promoted to experimentally solved mechanisms without a physical realization path."
+    },
+    {
+      "category": "diagnostics",
+      "lesson": "When a diagnostic is sector-resolved, its sector label is part of the observable definition."
+    }
+  ],
+  "references": [
+    {
+      "doi": "10.1103/PhysRevLett.121.086803",
+      "label": "Yao and Wang 2018",
+      "role": "foundation"
+    },
+    {
+      "label": "NHSE topology and Lindbladian literature cited in LP4 files (no DOI in source files)",
+      "role": "foundation"
+    },
+    {
+      "label": "Stinespring dilation framework (no DOI in source files)",
+      "role": "foundation"
+    }
+  ]
+}

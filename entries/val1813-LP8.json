@@ -1,0 +1,124 @@
+{
+  "polaris_version": "1.0",
+  "project": {
+    "id": "val1813-LP8",
+    "title": "Measurement-induced phase transitions require no-postselection/noise-universality boundaries",
+    "domain": "quant-ph",
+    "contradiction_type": "hidden-assumption",
+    "tags": [
+      "measurement-induced-transition",
+      "entanglement",
+      "quantum-circuits"
+    ],
+    "selector_strategy": "archive-closeout",
+    "hidden_assumption": "Postselected MIPT criticality directly transfers to physical monitored systems",
+    "date": "2026-06-04",
+    "status": "SOP closeout from existing archive",
+    "rounds": 3,
+    "contributor": {
+      "orcid": "",
+      "github": "val1813",
+      "name": "val1813"
+    }
+  },
+  "contradiction": {
+    "proposition_A": "Postselected MIPT criticality directly transfers to physical monitored systems",
+    "proposition_B": "Noise, feedback, and decoding constraints can change observability",
+    "why_not_both": "The archive frames these as mutually constraining claims; the closeout keeps only the bounded part that survived inspection.",
+    "resolution": "The closeout keeps a boundary map between ideal and physical MIPT regimes."
+  },
+  "derivation_chain": [
+    {
+      "step": 1,
+      "description": "Minimal closeout formula extracted or normalized from the archived synthesis line.",
+      "formulas": [
+        {
+          "label": "F1",
+          "expression": "S_A = L**a * f((p - p_c)*L**(1/nu))",
+          "variables": {
+            "S_A": "subsystem_entropy",
+            "L": "system_size",
+            "p": "measurement_rate",
+            "p_c": "critical_rate",
+            "nu": "correlation_length_exponent"
+          },
+          "units": "dimensionless"
+        }
+      ],
+      "assumptions": [
+        "Uses existing LP archive materials as source evidence",
+        "Claim is bounded to the stated regime"
+      ],
+      "validation": {
+        "dimensions": "PASS_or_archival_PASS",
+        "archive_closeout": true
+      }
+    }
+  ],
+  "validation": {
+    "dimension_checks": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "prior_art_search": {
+      "performed": true,
+      "tool": "archived SOP reports plus registry closeout pass"
+    },
+    "archive_basis": "D:/Claude/ai-reservations/LP8-MIPT/LP8-synthesis/LP????.md; ?????.md"
+  },
+  "source_files": "D:/Claude/ai-reservations/LP8-MIPT/LP8-synthesis/LP????.md; ?????.md",
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "A no-postselection boundary map survived.",
+      "confidence": 0.66,
+      "status": "survived",
+      "evidence_for": [
+        "Existing synthesis/closeout material supports this bounded claim"
+      ],
+      "evidence_against": [
+        "Not promoted to final theorem without fresh external re-audit"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "Directly equating postselected and physical MIPT universality is killed. ",
+      "confidence": 0.0,
+      "status": "killed",
+      "killed_by": "SOP closeout bounded the original stronger claim",
+      "evidence_against": [
+        "Archived reviewer/auditor or synthesis material records boundary, prior-art risk, or insufficient derivation"
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "id": "P1",
+      "statement": "Decoder-visible transition shifts under realistic noise",
+      "observable": "mutual information crossing",
+      "expected_values": {
+        "value": "shifted_p_c",
+        "unit": "dimensionless"
+      },
+      "measurement_conditions": "monitored circuit without postselection"
+    }
+  ],
+  "lessons": [
+    {
+      "category": "method",
+      "lesson": "Archive closeout must preserve both surviving bounded claims and killed overclaims."
+    },
+    {
+      "category": "review",
+      "lesson": "This registry entry is a knowledge-graph closeout, not a replacement for a fresh publication-grade referee cycle."
+    }
+  ],
+  "references": [
+    {
+      "doi": "10.1103/PhysRevX.9.031009",
+      "label": "Skinner et al. 2019",
+      "role": "foundation"
+    }
+  ]
+}

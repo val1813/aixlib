@@ -1,0 +1,263 @@
+{
+  "polaris_version": "1.0",
+  "project": {
+    "id": "val1813-LP7",
+    "title": "QM-GR unification reduced to six-channel candidate admission, not a unified dynamics",
+    "domain": "gr-qc",
+    "contradiction_type": "hidden-assumption",
+    "tags": [
+      "quantum-gravity",
+      "semiclassical-gravity",
+      "bmv",
+      "black-hole-information",
+      "candidate-screening"
+    ],
+    "selector_strategy": "S1",
+    "hidden_assumption": "A single scalar formula or causal-set observable block can be promoted into a full QM-GR unification dynamics.",
+    "date": "2026-06-01",
+    "status": "bounded-structural-closure",
+    "rounds": 10,
+    "contributor": {
+      "orcid": "",
+      "github": "val1813",
+      "name": "val1813"
+    }
+  },
+  "contradiction": {
+    "proposition_A": "QM and GR can be unified by finding a single fundamental equation or one privileged observable formula.",
+    "proposition_B": "Known source, mediator, noise, entropy, observable, and frame boundaries prevent a current single-formula closure.",
+    "why_not_both": "If a candidate is a true unified dynamics it must close all six operational channels; LP7 only constructs an interface/admission layer and explicitly lacks a shared action, Hamiltonian, path integral, stochastic generator, or observable algebra.",
+    "resolution": "LP7 closes at an interface and screening layer: I[T] plus J_unify[I[T]]. It is a candidate-admission functional, not a confirmed unified theory."
+  },
+  "derivation_chain": [
+    {
+      "step": 1,
+      "description": "Candidate theory is mapped into a six-channel operational interface.",
+      "formulas": [
+        {
+          "label": "F1",
+          "expression": "I_T = Tuple(Phi_source, Phi_mediator, Phi_noise, Phi_entropy, Phi_obs, Phi_frame)",
+          "variables": {
+            "I_T": "operational_interface_of_candidate_theory_T",
+            "Phi_source": "source_channel",
+            "Phi_mediator": "mediator_channel",
+            "Phi_noise": "hybrid_noise_channel",
+            "Phi_entropy": "black_hole_entropy_channel",
+            "Phi_obs": "observable_dictionary_channel",
+            "Phi_frame": "frame_consistency_channel"
+          },
+          "units": "structured_tuple"
+        },
+        {
+          "label": "F2",
+          "expression": "J_unify = Tuple(J_PG, J_BMV, J_hybrid, J_BH, J_obs, J_frame)",
+          "variables": {
+            "J_unify": "admission_functional",
+            "J_PG": "Page_Geilker_source_penalty",
+            "J_BMV": "BMV_mediator_penalty",
+            "J_hybrid": "hybrid_dynamics_penalty",
+            "J_BH": "black_hole_entropy_penalty",
+            "J_obs": "observable_dictionary_penalty",
+            "J_frame": "frame_consistency_penalty"
+          },
+          "units": "structured_tuple"
+        }
+      ],
+      "assumptions": [
+        "Each channel must be separately defined and compared",
+        "Tuple inequality is componentwise admission, not scalar action minimization"
+      ],
+      "validation": {
+        "dimensions": "PASS",
+        "audit": "interface layer only"
+      }
+    },
+    {
+      "step": 2,
+      "description": "Causal-set propagator distance is only an implementation of the observable block.",
+      "formulas": [
+        {
+          "label": "F3",
+          "expression": "J_obs_CS = dist_delta(D.T*(K_i - K_j)*J, Im_M_cross)",
+          "variables": {
+            "J_obs_CS": "causal_set_observable_penalty",
+            "D": "detector_map",
+            "K_i": "candidate_propagator_i",
+            "K_j": "candidate_propagator_j",
+            "J": "source_vector",
+            "Im_M_cross": "imaginary_cross_response",
+            "dist_delta": "tolerance_distance"
+          },
+          "units": "observable_distance"
+        }
+      ],
+      "assumptions": [
+        "causal-set response block does not generate source, mediator, entropy, or frame closure"
+      ],
+      "validation": {
+        "dimensions": "PASS",
+        "scope": "J_obs block only"
+      }
+    }
+  ],
+  "validation": {
+    "dimension_checks": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0
+    },
+    "prior_art_search": {
+      "performed": false,
+      "tool": "not rerun; external audit reports GATE0/GATE1 missing",
+      "found": [],
+      "impact": "Entry must retain low-to-medium confidence and record SOP deficiencies."
+    },
+    "closure_audit": {
+      "result": "bounded structural closure",
+      "external_rating": "C+",
+      "major_caveats": [
+        "literature library inherited from causal-set project",
+        "many subpropositions were shallow one-phase passes",
+        "B independence questioned"
+      ]
+    }
+  },
+  "source_files": [
+    "D:/Claude/ai-reservations/LP7-QMGRUnification/synthesis/LP7_最终审核_复现_代数验证_收官.md",
+    "D:/Claude/ai-reservations/LP7-QMGRUnification/synthesis/LP7_总图谱整合与收官.md",
+    "D:/Claude/ai-reservations/LP7-QMGRUnification/synthesis/LP7_外部审计报告_20260601.md",
+    "D:/Claude/ai-reservations/LP7-QMGRUnification/synthesis/knowledge_graph.json",
+    "D:/Claude/ai-reservations/knowledge_graph/LP7-QMGRUnification_v1_20260601.json"
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "LP7 establishes a six-channel candidate-admission interface I[T] and J_unify[I[T]].",
+      "confidence": 0.7,
+      "status": "survived",
+      "evidence_for": [
+        "final closure and total graph files both state I[T] and J_unify",
+        "knowledge graph records K96-K101"
+      ],
+      "evidence_against": [
+        "external audit rates result as classification framework rather than publishable physics conclusion"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "T* is a layered interface template and cannot be upgraded to a unified theory body.",
+      "confidence": 0.84,
+      "status": "survived",
+      "evidence_for": [
+        "final audit explicitly forbids upgrading T*",
+        "knowledge graph K99-K100 records no dynamical closure"
+      ],
+      "evidence_against": []
+    },
+    {
+      "id": "C3",
+      "statement": "LP7 discovered a confirmed unified QM-GR dynamical equation.",
+      "confidence": 0.0,
+      "status": "killed",
+      "killed_by": "LP7 final closure",
+      "evidence_against": [
+        "No shared action, Hamiltonian, path integral, stochastic generator, or unified observable algebra was produced",
+        "J_unify is admission functional, not fundamental equation"
+      ]
+    },
+    {
+      "id": "C4",
+      "statement": "The causal-set J_obs block alone solves QM-GR unification.",
+      "confidence": 0.0,
+      "status": "killed",
+      "killed_by": "LP7 total graph and final audit",
+      "evidence_against": [
+        "J_obs_CS is only the observable response block",
+        "It does not supply BMV mediation, Page curve, source-channel closure, or frame consistency"
+      ]
+    },
+    {
+      "id": "C5",
+      "statement": "LP7 is ready to be treated as a fully SOP-compliant publishable physics result.",
+      "confidence": 0.05,
+      "status": "killed",
+      "killed_by": "external audit report",
+      "evidence_against": [
+        "GATE0 and GATE1 missing",
+        "literature library scope mismatch",
+        "VERIFIER and LP_CLOSURE not formally triggered"
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "id": "P1",
+      "statement": "A concrete candidate theory T that fails any one of the six channels should be classified as partial rather than complete.",
+      "observable": "componentwise J_unify[T] pass/fail vector",
+      "expected_values": {
+        "complete_candidate": {
+          "value": "all_components_below_tolerance",
+          "unit": "logical"
+        }
+      },
+      "measurement_conditions": "Apply I[T] construction to a specific candidate theory, not to an abstract template."
+    },
+    {
+      "id": "P2",
+      "statement": "Causal-set observable matching can pass J_obs while leaving other unification blocks unresolved.",
+      "observable": "J_obs_CS and remaining J_PG, J_BMV, J_hybrid, J_BH, J_frame",
+      "expected_values": {
+        "J_obs_CS": {
+          "value": "can_be_small",
+          "unit": "distance"
+        },
+        "other_blocks": {
+          "value": "not_implied",
+          "unit": "logical"
+        }
+      },
+      "measurement_conditions": "Test causal-set candidates against the full six-channel interface."
+    }
+  ],
+  "lessons": [
+    {
+      "category": "scope",
+      "lesson": "A screening functional is useful but must not be presented as a fundamental dynamics."
+    },
+    {
+      "category": "SOP",
+      "lesson": "Inherited literature libraries can invalidate closure confidence when the new LP topic changes scope."
+    },
+    {
+      "category": "next_step",
+      "lesson": "Further progress requires choosing a concrete candidate T and evaluating all six channels, not adding more abstract blocks."
+    }
+  ],
+  "references": [
+    {
+      "doi": "10.1103/PhysRevLett.119.240401",
+      "label": "Bose et al. 2017",
+      "role": "foundation"
+    },
+    {
+      "label": "Page-Geilker boundary literature cited in LP7 files (no DOI in source files)",
+      "role": "foundation"
+    },
+    {
+      "label": "BMV mediator literature cited in LP7 files (no DOI in source files)",
+      "role": "foundation"
+    },
+    {
+      "label": "hybrid quantum-classical no-go literature cited in LP7 files (no DOI in source files)",
+      "role": "foundation"
+    },
+    {
+      "label": "black-hole information boundary literature cited in LP7 files (no DOI in source files)",
+      "role": "foundation"
+    },
+    {
+      "label": "causal-set propagator literature inherited in LP7 files (no DOI in source files)",
+      "role": "observable_block"
+    }
+  ]
+}

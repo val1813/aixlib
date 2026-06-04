@@ -1,0 +1,122 @@
+{
+  "polaris_version": "1.0",
+  "project": {
+    "id": "val1813-LP11",
+    "title": "Muon g-2 anomaly closes as a bounded tension ledger",
+    "domain": "hep-ph",
+    "contradiction_type": "exp-vs-theory",
+    "tags": [
+      "muon-g-2",
+      "standard-model",
+      "lattice-qcd"
+    ],
+    "selector_strategy": "archive-closeout",
+    "hidden_assumption": "Muon g-2 discrepancy is definitive new physics",
+    "date": "2026-06-04",
+    "status": "SOP closeout from existing archive",
+    "rounds": 3,
+    "contributor": {
+      "orcid": "",
+      "github": "val1813",
+      "name": "val1813"
+    }
+  },
+  "contradiction": {
+    "proposition_A": "Muon g-2 discrepancy is definitive new physics",
+    "proposition_B": "Theory inputs and lattice/data-driven hadronic vacuum polarization can shift the tension",
+    "why_not_both": "The archive frames these as mutually constraining claims; the closeout keeps only the bounded part that survived inspection.",
+    "resolution": "The closeout preserves the anomaly ledger but kills decisive new-physics inference."
+  },
+  "derivation_chain": [
+    {
+      "step": 1,
+      "description": "Minimal closeout formula extracted or normalized from the archived synthesis line.",
+      "formulas": [
+        {
+          "label": "F1",
+          "expression": "Delta_a_mu = a_mu_exp - a_mu_SM",
+          "variables": {
+            "Delta_a_mu": "anomaly",
+            "a_mu_exp": "experimental_value",
+            "a_mu_SM": "standard_model_prediction"
+          },
+          "units": "dimensionless"
+        }
+      ],
+      "assumptions": [
+        "Uses existing LP archive materials as source evidence",
+        "Claim is bounded to the stated regime"
+      ],
+      "validation": {
+        "dimensions": "PASS_or_archival_PASS",
+        "archive_closeout": true
+      }
+    }
+  ],
+  "validation": {
+    "dimension_checks": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "prior_art_search": {
+      "performed": true,
+      "tool": "archived SOP reports plus registry closeout pass"
+    },
+    "archive_basis": "D:/Claude/ai-reservations/LP11-Muong2/LP-synthesis/LP????.md; current/plan/knowledge_graph.json"
+  },
+  "source_files": "D:/Claude/ai-reservations/LP11-Muong2/LP-synthesis/LP????.md; current/plan/knowledge_graph.json",
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "A measurable experiment-theory tension survived.",
+      "confidence": 0.63,
+      "status": "survived",
+      "evidence_for": [
+        "Existing synthesis/closeout material supports this bounded claim"
+      ],
+      "evidence_against": [
+        "Not promoted to final theorem without fresh external re-audit"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "Definitive BSM interpretation is killed. ",
+      "confidence": 0.0,
+      "status": "killed",
+      "killed_by": "SOP closeout bounded the original stronger claim",
+      "evidence_against": [
+        "Archived reviewer/auditor or synthesis material records boundary, prior-art risk, or insufficient derivation"
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "id": "P1",
+      "statement": "Updated HVP inputs move Delta_a_mu and model ranking",
+      "observable": "a_mu and HVP contribution",
+      "expected_values": {
+        "value": "few_sigma_variable",
+        "unit": "dimensionless"
+      },
+      "measurement_conditions": "combined Fermilab, lattice, and e+e- data"
+    }
+  ],
+  "lessons": [
+    {
+      "category": "method",
+      "lesson": "Archive closeout must preserve both surviving bounded claims and killed overclaims."
+    },
+    {
+      "category": "review",
+      "lesson": "This registry entry is a knowledge-graph closeout, not a replacement for a fresh publication-grade referee cycle."
+    }
+  ],
+  "references": [
+    {
+      "doi": "10.1103/PhysRevLett.126.141801",
+      "label": "Abi et al. 2021",
+      "role": "foundation"
+    }
+  ]
+}

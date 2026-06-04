@@ -1,0 +1,123 @@
+{
+  "polaris_version": "1.0",
+  "project": {
+    "id": "val1813-LP9",
+    "title": "Discrete time crystal claims close as lifetime/no-go/prethermal ledger",
+    "domain": "cond-mat.dis-nn",
+    "contradiction_type": "hidden-assumption",
+    "tags": [
+      "time-crystal",
+      "floquet",
+      "prethermal"
+    ],
+    "selector_strategy": "archive-closeout",
+    "hidden_assumption": "Subharmonic response alone proves a stable time crystal",
+    "date": "2026-06-04",
+    "status": "SOP closeout from existing archive",
+    "rounds": 3,
+    "contributor": {
+      "orcid": "",
+      "github": "val1813",
+      "name": "val1813"
+    }
+  },
+  "contradiction": {
+    "proposition_A": "Subharmonic response alone proves a stable time crystal",
+    "proposition_B": "Heating, finite lifetime, and prethermal regimes can mimic or bound the phenomenon",
+    "why_not_both": "The archive frames these as mutually constraining claims; the closeout keeps only the bounded part that survived inspection.",
+    "resolution": "The closeout preserves a diagnostic ledger separating stable, prethermal, and artifact responses."
+  },
+  "derivation_chain": [
+    {
+      "step": 1,
+      "description": "Minimal closeout formula extracted or normalized from the archived synthesis line.",
+      "formulas": [
+        {
+          "label": "F1",
+          "expression": "tau_star = exp(c*omega/J)",
+          "variables": {
+            "tau_star": "prethermal_lifetime",
+            "c": "constant",
+            "omega": "drive_frequency",
+            "J": "local_energy_scale"
+          },
+          "units": "s"
+        }
+      ],
+      "assumptions": [
+        "Uses existing LP archive materials as source evidence",
+        "Claim is bounded to the stated regime"
+      ],
+      "validation": {
+        "dimensions": "PASS_or_archival_PASS",
+        "archive_closeout": true
+      }
+    }
+  ],
+  "validation": {
+    "dimension_checks": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "prior_art_search": {
+      "performed": true,
+      "tool": "archived SOP reports plus registry closeout pass"
+    },
+    "archive_basis": "D:/Claude/ai-reservations/LP9-DTC/LP-synthesis/LP????.md"
+  },
+  "source_files": "D:/Claude/ai-reservations/LP9-DTC/LP-synthesis/LP????.md",
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "Prethermal lifetime criterion survived.",
+      "confidence": 0.67,
+      "status": "survived",
+      "evidence_for": [
+        "Existing synthesis/closeout material supports this bounded claim"
+      ],
+      "evidence_against": [
+        "Not promoted to final theorem without fresh external re-audit"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "Subharmonic response without rigidity/lifetime checks is killed. ",
+      "confidence": 0.0,
+      "status": "killed",
+      "killed_by": "SOP closeout bounded the original stronger claim",
+      "evidence_against": [
+        "Archived reviewer/auditor or synthesis material records boundary, prior-art risk, or insufficient derivation"
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "id": "P1",
+      "statement": "Lifetime grows exponentially with drive frequency in prethermal regime",
+      "observable": "subharmonic peak lifetime",
+      "expected_values": {
+        "value": "exp(c*omega/J)",
+        "unit": "drive_periods"
+      },
+      "measurement_conditions": "Floquet spin system at high frequency"
+    }
+  ],
+  "lessons": [
+    {
+      "category": "method",
+      "lesson": "Archive closeout must preserve both surviving bounded claims and killed overclaims."
+    },
+    {
+      "category": "review",
+      "lesson": "This registry entry is a knowledge-graph closeout, not a replacement for a fresh publication-grade referee cycle."
+    }
+  ],
+  "references": [
+    {
+      "doi": "10.1103/PhysRevLett.117.090402",
+      "label": "Else et al. 2016",
+      "role": "foundation"
+    }
+  ]
+}

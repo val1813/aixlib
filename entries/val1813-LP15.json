@@ -1,0 +1,122 @@
+{
+  "polaris_version": "1.0",
+  "project": {
+    "id": "val1813-LP15",
+    "title": "Superconductor-insulator transition closes as nonuniversal critical-resistance problem",
+    "domain": "cond-mat.supr-con",
+    "contradiction_type": "hidden-assumption",
+    "tags": [
+      "superconductor-insulator-transition",
+      "quantum-criticality",
+      "disorder"
+    ],
+    "selector_strategy": "archive-closeout",
+    "hidden_assumption": "SIT has a universal critical sheet resistance R_Q",
+    "date": "2026-06-04",
+    "status": "SOP closeout from existing archive",
+    "rounds": 3,
+    "contributor": {
+      "orcid": "",
+      "github": "val1813",
+      "name": "val1813"
+    }
+  },
+  "contradiction": {
+    "proposition_A": "SIT has a universal critical sheet resistance R_Q",
+    "proposition_B": "Disorder, boson/fermion channels, and dissipation can shift critical behavior",
+    "why_not_both": "The archive frames these as mutually constraining claims; the closeout keeps only the bounded part that survived inspection.",
+    "resolution": "The closeout preserves scaling diagnostics but kills strict universality."
+  },
+  "derivation_chain": [
+    {
+      "step": 1,
+      "description": "Minimal closeout formula extracted or normalized from the archived synthesis line.",
+      "formulas": [
+        {
+          "label": "F1",
+          "expression": "R_Q = h/(4*e**2)",
+          "variables": {
+            "R_Q": "Cooper_pair_resistance_quantum",
+            "h": "Planck_constant",
+            "e": "elementary_charge"
+          },
+          "units": "ohm"
+        }
+      ],
+      "assumptions": [
+        "Uses existing LP archive materials as source evidence",
+        "Claim is bounded to the stated regime"
+      ],
+      "validation": {
+        "dimensions": "PASS_or_archival_PASS",
+        "archive_closeout": true
+      }
+    }
+  ],
+  "validation": {
+    "dimension_checks": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "prior_art_search": {
+      "performed": true,
+      "tool": "archived SOP reports plus registry closeout pass"
+    },
+    "archive_basis": "D:/Claude/ai-reservations/LP15-SIT-QPT/synthesis/LP15_????_v1.0.md; LP15-????QPT/synthesis/closeout.md"
+  },
+  "source_files": "D:/Claude/ai-reservations/LP15-SIT-QPT/synthesis/LP15_????_v1.0.md; LP15-????QPT/synthesis/closeout.md",
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "Critical resistance remains a useful reference scale.",
+      "confidence": 0.64,
+      "status": "survived",
+      "evidence_for": [
+        "Existing synthesis/closeout material supports this bounded claim"
+      ],
+      "evidence_against": [
+        "Not promoted to final theorem without fresh external re-audit"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "Strict universal R_c = R_Q is killed. ",
+      "confidence": 0.0,
+      "status": "killed",
+      "killed_by": "SOP closeout bounded the original stronger claim",
+      "evidence_against": [
+        "Archived reviewer/auditor or synthesis material records boundary, prior-art risk, or insufficient derivation"
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "id": "P1",
+      "statement": "Scaling collapse exponents change with dissipation and disorder class",
+      "observable": "R(T,B) crossing and z*nu",
+      "expected_values": {
+        "value": "nonuniversal",
+        "unit": "dimensionless"
+      },
+      "measurement_conditions": "thin film SIT measurements"
+    }
+  ],
+  "lessons": [
+    {
+      "category": "method",
+      "lesson": "Archive closeout must preserve both surviving bounded claims and killed overclaims."
+    },
+    {
+      "category": "review",
+      "lesson": "This registry entry is a knowledge-graph closeout, not a replacement for a fresh publication-grade referee cycle."
+    }
+  ],
+  "references": [
+    {
+      "doi": "10.1103/PhysRevLett.64.587",
+      "label": "Fisher et al. 1990",
+      "role": "foundation"
+    }
+  ]
+}

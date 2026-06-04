@@ -1,0 +1,123 @@
+{
+  "polaris_version": "1.0",
+  "project": {
+    "id": "val1813-LP26",
+    "title": "Cuprate SFD closes as low-confidence staged diagnostic",
+    "domain": "cond-mat.supr-con",
+    "contradiction_type": "hidden-assumption",
+    "tags": [
+      "cuprate",
+      "strange-metal",
+      "superconductivity"
+    ],
+    "selector_strategy": "archive-closeout",
+    "hidden_assumption": "One SFD variable explains cuprate strange metal and superconductivity",
+    "date": "2026-06-04",
+    "status": "SOP closeout from existing archive",
+    "rounds": 3,
+    "contributor": {
+      "orcid": "",
+      "github": "val1813",
+      "name": "val1813"
+    }
+  },
+  "contradiction": {
+    "proposition_A": "One SFD variable explains cuprate strange metal and superconductivity",
+    "proposition_B": "Round reviews keep only staged diagnostics with inspector caveats",
+    "why_not_both": "The archive frames these as mutually constraining claims; the closeout keeps only the bounded part that survived inspection.",
+    "resolution": "The closeout preserves the diagnostic program and kills single-mechanism explanation."
+  },
+  "derivation_chain": [
+    {
+      "step": 1,
+      "description": "Minimal closeout formula extracted or normalized from the archived synthesis line.",
+      "formulas": [
+        {
+          "label": "F1",
+          "expression": "rho(T) = rho0 + A*T",
+          "variables": {
+            "rho": "resistivity",
+            "rho0": "residual_resistivity",
+            "A": "linear_coefficient",
+            "T": "temperature"
+          },
+          "units": "ohm*m"
+        }
+      ],
+      "assumptions": [
+        "Uses existing LP archive materials as source evidence",
+        "Claim is bounded to the stated regime"
+      ],
+      "validation": {
+        "dimensions": "PASS_or_archival_PASS",
+        "archive_closeout": true
+      }
+    }
+  ],
+  "validation": {
+    "dimension_checks": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "prior_art_search": {
+      "performed": true,
+      "tool": "archived SOP reports plus registry closeout pass"
+    },
+    "archive_basis": "D:/Claude/ai-reservations/LP26-CuprateSFD/synthesis/round1_PI_synthesis.md; round2_PI_synthesis.md; round3_PI_synthesis.md; S5_INSPECTOR_??.md"
+  },
+  "source_files": "D:/Claude/ai-reservations/LP26-CuprateSFD/synthesis/round1_PI_synthesis.md; round2_PI_synthesis.md; round3_PI_synthesis.md; S5_INSPECTOR_??.md",
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "A staged cuprate diagnostic survived as a research program.",
+      "confidence": 0.38,
+      "status": "survived",
+      "evidence_for": [
+        "Existing synthesis/closeout material supports this bounded claim"
+      ],
+      "evidence_against": [
+        "Not promoted to final theorem without fresh external re-audit"
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "Single-variable explanation of cuprate phenomenology is killed. ",
+      "confidence": 0.0,
+      "status": "killed",
+      "killed_by": "SOP closeout bounded the original stronger claim",
+      "evidence_against": [
+        "Archived reviewer/auditor or synthesis material records boundary, prior-art risk, or insufficient derivation"
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "id": "P1",
+      "statement": "SFD diagnostic must correlate with T-linear slope and superconducting dome only in a bounded doping window",
+      "observable": "A coefficient, Tc, doping",
+      "expected_values": {
+        "value": "windowed_correlation",
+        "unit": "dimensionless"
+      },
+      "measurement_conditions": "cuprate doping series"
+    }
+  ],
+  "lessons": [
+    {
+      "category": "method",
+      "lesson": "Archive closeout must preserve both surviving bounded claims and killed overclaims."
+    },
+    {
+      "category": "review",
+      "lesson": "This registry entry is a knowledge-graph closeout, not a replacement for a fresh publication-grade referee cycle."
+    }
+  ],
+  "references": [
+    {
+      "doi": "10.1038/nature14165",
+      "label": "Keimer et al. 2015",
+      "role": "foundation"
+    }
+  ]
+}

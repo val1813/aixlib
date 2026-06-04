@@ -1,6 +1,908 @@
 {
-  "total": 2,
+  "total": 23,
   "entries": [
+    {
+      "id": "val1813-LP1",
+      "title": "2D MBL stability is disorder-type dependent: percolation blockade and Diophantine protection",
+      "domain": "cond-mat.dis-nn",
+      "contradiction_type": "hidden-assumption",
+      "status": "bounded-closure",
+      "date": "2026-05-31",
+      "rounds": 4,
+      "hidden_assumption": "The stability of 2D MBL can be decided by a single avalanche argument independent of disorder structure.",
+      "contributor": {
+        "orcid": "",
+        "github": "val1813",
+        "name": "val1813"
+      },
+      "contradiction": {
+        "proposition_A": "Strong disorder in two dimensions can support an MBL-like stable phase.",
+        "proposition_B": "In two dimensions thermal inclusions trigger avalanches that destroy MBL in the thermodynamic limit.",
+        "why_not_both": "If avalanches always percolate, stable 2D MBL is excluded; if thermalization is blocked or seeds are bounded, the universal avalanche no-go is too strong.",
+        "resolution": "Both claims survive only with boundaries. Quasiperiodic badly approximable potentials have literature-supported strong stability with this project adding Diophantine classification and explicit bounds. Random disorder is not strictly stable in the infinite-time sense but can be operationally stable when many-body thermalization percolation is blocked."
+      },
+      "claims": [
+        {
+          "id": "C1",
+          "statement": "2D MBL stability is controlled by disorder type and many-body thermalization percolation, not by a single universal avalanche answer.",
+          "confidence": 0.82,
+          "status": "survived",
+          "evidence_for": [
+            "LP1 knowledge graph records p_block vs p_c as the order parameter",
+            "S1-S3 synthesis gives random/quasiperiodic phase distinction"
+          ],
+          "evidence_against": [
+            "Strict random-disorder stability is not claimed"
+          ]
+        },
+        {
+          "id": "C2",
+          "statement": "Badly approximable quasiperiodic potentials support strong MBL stability; the project increment is Diophantine classification and explicit L_max bounds.",
+          "confidence": 0.72,
+          "status": "survived",
+          "evidence_for": [
+            "S3 synthesis cites multiple prior works and adds L_max <= 2*(M+2)/epsilon",
+            "knowledge graph records L_max << xi_perc as support"
+          ],
+          "evidence_against": [
+            "Core physical conclusion is prior art",
+            "2D decomposition is a sufficient condition and can be conservative by about a factor of two"
+          ]
+        },
+        {
+          "id": "C3",
+          "statement": "Quasiperiodic 2D MBL is rigorously and unconditionally strictly stable with tau_MBL = infinity.",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "LP1 synthesis downgrade after prior-art and Griffiths-tail audit",
+          "evidence_against": [
+            "WPL Griffiths correction L_eff = L_max + 2*zeta_WPL*log(W/g) may downgrade strict stability",
+            "rank>2 and nonseparable potentials require separate audit"
+          ]
+        },
+        {
+          "id": "C4",
+          "statement": "Random 2D MBL is strictly stable in the thermodynamic infinite-time sense.",
+          "confidence": 0.05,
+          "status": "killed",
+          "killed_by": "LP1 synthesis distinguishes strict stability from operational stability",
+          "evidence_against": [
+            "Random disorder allows rare thermal regions and eventual quantum tunneling",
+            "only tau_MBL ~ exp(alpha*L) operational stability survives"
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "P1",
+          "statement": "Well-approximable beta should show finite-size drift when system size reaches relevant continued-fraction denominators.",
+          "observable": "crossing-point drift in quasiperiodic MBL finite-size scaling",
+          "expected_values": {
+            "q_5_example": {
+              "value": 32,
+              "uncertainty": 7,
+              "unit": "sites"
+            }
+          },
+          "measurement_conditions": "Change beta away from golden ratio toward well-approximable values and compare L near q_n."
+        },
+        {
+          "id": "P2",
+          "statement": "Near p_block = p_c, thermalization fronts should show 2D percolation geometry.",
+          "observable": "front fractal dimension and activated dynamics",
+          "expected_values": {
+            "d_f": {
+              "value": 1.896,
+              "uncertainty": 0.02,
+              "unit": "dimensionless"
+            },
+            "nu": {
+              "value": 1.333,
+              "uncertainty": 0.02,
+              "unit": "dimensionless"
+            }
+          },
+          "measurement_conditions": "Random-disorder simulations or cold-atom experiments tuned close to the blockade threshold."
+        }
+      ],
+      "lessons": [
+        {
+          "category": "prior_art",
+          "lesson": "Separate literature-established core conclusions from project increments; quasiperiodic stability was not original to this project."
+        },
+        {
+          "category": "method",
+          "lesson": "A sufficient-condition 2D reduction must be labeled as conservative and cannot be used as a necessary stability bound."
+        },
+        {
+          "category": "claim_control",
+          "lesson": "Use operational stability for random disorder and avoid infinite-time strict-stability wording unless all rare-region and Griffiths channels are closed."
+        }
+      ]
+    },
+    {
+      "id": "val1813-LP10",
+      "title": "Flat-band superconductivity closes as geometry-bound enhancement",
+      "domain": "cond-mat.supr-con",
+      "contradiction_type": "hidden-assumption",
+      "status": "SOP closeout from existing archive",
+      "date": "2026-06-04",
+      "rounds": 3,
+      "hidden_assumption": "Flat-band density of states alone controls superconducting Tc",
+      "contributor": {
+        "orcid": "",
+        "github": "val1813",
+        "name": "val1813"
+      },
+      "contradiction": {
+        "proposition_A": "Flat-band density of states alone controls superconducting Tc",
+        "proposition_B": "Quantum metric, disorder, isolation, and interactions bound the enhancement",
+        "why_not_both": "The archive frames these as mutually constraining claims; the closeout keeps only the bounded part that survived inspection.",
+        "resolution": "The archive keeps geometry-assisted enhancement and kills DOS-only universality."
+      },
+      "claims": [
+        {
+          "id": "C1",
+          "statement": "Quantum-geometry contribution survived as a necessary organizing term.",
+          "confidence": 0.66,
+          "status": "survived",
+          "evidence_for": [
+            "Existing synthesis/closeout material supports this bounded claim"
+          ],
+          "evidence_against": [
+            "Not promoted to final theorem without fresh external re-audit"
+          ]
+        },
+        {
+          "id": "C2",
+          "statement": "DOS-only flat-band Tc prediction is killed. ",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "SOP closeout bounded the original stronger claim",
+          "evidence_against": [
+            "Archived reviewer/auditor or synthesis material records boundary, prior-art risk, or insufficient derivation"
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "P1",
+          "statement": "Tc tracks quantum metric when conventional velocity vanishes",
+          "observable": "superfluid stiffness and band quantum metric",
+          "expected_values": {
+            "value": "positive_D_geom",
+            "unit": "energy"
+          },
+          "measurement_conditions": "isolated flat band with controlled disorder"
+        }
+      ],
+      "lessons": [
+        {
+          "category": "method",
+          "lesson": "Archive closeout must preserve both surviving bounded claims and killed overclaims."
+        },
+        {
+          "category": "review",
+          "lesson": "This registry entry is a knowledge-graph closeout, not a replacement for a fresh publication-grade referee cycle."
+        }
+      ]
+    },
+    {
+      "id": "val1813-LP11",
+      "title": "Muon g-2 anomaly closes as a bounded tension ledger",
+      "domain": "hep-ph",
+      "contradiction_type": "exp-vs-theory",
+      "status": "SOP closeout from existing archive",
+      "date": "2026-06-04",
+      "rounds": 3,
+      "hidden_assumption": "Muon g-2 discrepancy is definitive new physics",
+      "contributor": {
+        "orcid": "",
+        "github": "val1813",
+        "name": "val1813"
+      },
+      "contradiction": {
+        "proposition_A": "Muon g-2 discrepancy is definitive new physics",
+        "proposition_B": "Theory inputs and lattice/data-driven hadronic vacuum polarization can shift the tension",
+        "why_not_both": "The archive frames these as mutually constraining claims; the closeout keeps only the bounded part that survived inspection.",
+        "resolution": "The closeout preserves the anomaly ledger but kills decisive new-physics inference."
+      },
+      "claims": [
+        {
+          "id": "C1",
+          "statement": "A measurable experiment-theory tension survived.",
+          "confidence": 0.63,
+          "status": "survived",
+          "evidence_for": [
+            "Existing synthesis/closeout material supports this bounded claim"
+          ],
+          "evidence_against": [
+            "Not promoted to final theorem without fresh external re-audit"
+          ]
+        },
+        {
+          "id": "C2",
+          "statement": "Definitive BSM interpretation is killed. ",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "SOP closeout bounded the original stronger claim",
+          "evidence_against": [
+            "Archived reviewer/auditor or synthesis material records boundary, prior-art risk, or insufficient derivation"
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "P1",
+          "statement": "Updated HVP inputs move Delta_a_mu and model ranking",
+          "observable": "a_mu and HVP contribution",
+          "expected_values": {
+            "value": "few_sigma_variable",
+            "unit": "dimensionless"
+          },
+          "measurement_conditions": "combined Fermilab, lattice, and e+e- data"
+        }
+      ],
+      "lessons": [
+        {
+          "category": "method",
+          "lesson": "Archive closeout must preserve both surviving bounded claims and killed overclaims."
+        },
+        {
+          "category": "review",
+          "lesson": "This registry entry is a knowledge-graph closeout, not a replacement for a fresh publication-grade referee cycle."
+        }
+      ]
+    },
+    {
+      "id": "val1813-LP12",
+      "title": "Quantum scars close as constrained subspace dynamics rather than generic ETH violation",
+      "domain": "quant-ph",
+      "contradiction_type": "hidden-assumption",
+      "status": "SOP closeout from existing archive",
+      "date": "2026-06-04",
+      "rounds": 3,
+      "hidden_assumption": "Long-lived revivals imply a broad failure of ETH",
+      "contributor": {
+        "orcid": "",
+        "github": "val1813",
+        "name": "val1813"
+      },
+      "contradiction": {
+        "proposition_A": "Long-lived revivals imply a broad failure of ETH",
+        "proposition_B": "Constrained Hilbert-space structure and approximate algebras can create exceptional nonthermal states",
+        "why_not_both": "The archive frames these as mutually constraining claims; the closeout keeps only the bounded part that survived inspection.",
+        "resolution": "The closeout preserves scar classification and kills generic ETH-failure claims."
+      },
+      "claims": [
+        {
+          "id": "C1",
+          "statement": "PXP/scar classification survived.",
+          "confidence": 0.67,
+          "status": "survived",
+          "evidence_for": [
+            "Existing synthesis/closeout material supports this bounded claim"
+          ],
+          "evidence_against": [
+            "Not promoted to final theorem without fresh external re-audit"
+          ]
+        },
+        {
+          "id": "C2",
+          "statement": "Generic nonthermalization of the full spectrum is killed. ",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "SOP closeout bounded the original stronger claim",
+          "evidence_against": [
+            "Archived reviewer/auditor or synthesis material records boundary, prior-art risk, or insufficient derivation"
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "P1",
+          "statement": "Perturbations that break the approximate algebra suppress revivals",
+          "observable": "revival fidelity",
+          "expected_values": {
+            "value": "decreasing_with_perturbation",
+            "unit": "dimensionless"
+          },
+          "measurement_conditions": "Rydberg/PXP-like constrained chain"
+        }
+      ],
+      "lessons": [
+        {
+          "category": "method",
+          "lesson": "Archive closeout must preserve both surviving bounded claims and killed overclaims."
+        },
+        {
+          "category": "review",
+          "lesson": "This registry entry is a knowledge-graph closeout, not a replacement for a fresh publication-grade referee cycle."
+        }
+      ]
+    },
+    {
+      "id": "val1813-LP14",
+      "title": "RuO2 altermagnetism closes as extrinsic/intrinsic separation problem",
+      "domain": "cond-mat.mtrl-sci",
+      "contradiction_type": "exp-vs-theory",
+      "status": "SOP closeout from existing archive",
+      "date": "2026-06-04",
+      "rounds": 3,
+      "hidden_assumption": "Observed RuO2 signals directly confirm intrinsic altermagnetism",
+      "contributor": {
+        "orcid": "",
+        "github": "val1813",
+        "name": "val1813"
+      },
+      "contradiction": {
+        "proposition_A": "Observed RuO2 signals directly confirm intrinsic altermagnetism",
+        "proposition_B": "Extrinsic effects, domains, strain, and surface probes can imitate parts of the signal",
+        "why_not_both": "The archive frames these as mutually constraining claims; the closeout keeps only the bounded part that survived inspection.",
+        "resolution": "The closeout keeps field-impact/extrinsic ledger and kills single-signal confirmation."
+      },
+      "claims": [
+        {
+          "id": "C1",
+          "statement": "A separation ledger for RuO2 evidence survived.",
+          "confidence": 0.62,
+          "status": "survived",
+          "evidence_for": [
+            "Existing synthesis/closeout material supports this bounded claim"
+          ],
+          "evidence_against": [
+            "Not promoted to final theorem without fresh external re-audit"
+          ]
+        },
+        {
+          "id": "C2",
+          "statement": "Single experimental signature as decisive proof is killed. ",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "SOP closeout bounded the original stronger claim",
+          "evidence_against": [
+            "Archived reviewer/auditor or synthesis material records boundary, prior-art risk, or insufficient derivation"
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "P1",
+          "statement": "Domain and strain controls change extrinsic component without changing symmetry prediction",
+          "observable": "spin-splitting or transport anisotropy",
+          "expected_values": {
+            "value": "control_dependent",
+            "unit": "dimensionless"
+          },
+          "measurement_conditions": "RuO2 samples with domain/strain controls"
+        }
+      ],
+      "lessons": [
+        {
+          "category": "method",
+          "lesson": "Archive closeout must preserve both surviving bounded claims and killed overclaims."
+        },
+        {
+          "category": "review",
+          "lesson": "This registry entry is a knowledge-graph closeout, not a replacement for a fresh publication-grade referee cycle."
+        }
+      ]
+    },
+    {
+      "id": "val1813-LP15",
+      "title": "Superconductor-insulator transition closes as nonuniversal critical-resistance problem",
+      "domain": "cond-mat.supr-con",
+      "contradiction_type": "hidden-assumption",
+      "status": "SOP closeout from existing archive",
+      "date": "2026-06-04",
+      "rounds": 3,
+      "hidden_assumption": "SIT has a universal critical sheet resistance R_Q",
+      "contributor": {
+        "orcid": "",
+        "github": "val1813",
+        "name": "val1813"
+      },
+      "contradiction": {
+        "proposition_A": "SIT has a universal critical sheet resistance R_Q",
+        "proposition_B": "Disorder, boson/fermion channels, and dissipation can shift critical behavior",
+        "why_not_both": "The archive frames these as mutually constraining claims; the closeout keeps only the bounded part that survived inspection.",
+        "resolution": "The closeout preserves scaling diagnostics but kills strict universality."
+      },
+      "claims": [
+        {
+          "id": "C1",
+          "statement": "Critical resistance remains a useful reference scale.",
+          "confidence": 0.64,
+          "status": "survived",
+          "evidence_for": [
+            "Existing synthesis/closeout material supports this bounded claim"
+          ],
+          "evidence_against": [
+            "Not promoted to final theorem without fresh external re-audit"
+          ]
+        },
+        {
+          "id": "C2",
+          "statement": "Strict universal R_c = R_Q is killed. ",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "SOP closeout bounded the original stronger claim",
+          "evidence_against": [
+            "Archived reviewer/auditor or synthesis material records boundary, prior-art risk, or insufficient derivation"
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "P1",
+          "statement": "Scaling collapse exponents change with dissipation and disorder class",
+          "observable": "R(T,B) crossing and z*nu",
+          "expected_values": {
+            "value": "nonuniversal",
+            "unit": "dimensionless"
+          },
+          "measurement_conditions": "thin film SIT measurements"
+        }
+      ],
+      "lessons": [
+        {
+          "category": "method",
+          "lesson": "Archive closeout must preserve both surviving bounded claims and killed overclaims."
+        },
+        {
+          "category": "review",
+          "lesson": "This registry entry is a knowledge-graph closeout, not a replacement for a fresh publication-grade referee cycle."
+        }
+      ]
+    },
+    {
+      "id": "val1813-LP16",
+      "title": "Categorical Landau closes as round-1 structural hypothesis",
+      "domain": "math-ph",
+      "contradiction_type": "structural-isomorphism",
+      "status": "SOP closeout from existing archive",
+      "date": "2026-06-04",
+      "rounds": 3,
+      "hidden_assumption": "Landau classification can be fully replaced by categorical structure after one round",
+      "contributor": {
+        "orcid": "",
+        "github": "val1813",
+        "name": "val1813"
+      },
+      "contradiction": {
+        "proposition_A": "Landau classification can be fully replaced by categorical structure after one round",
+        "proposition_B": "Round-1 inspectors only support a limited structural analogy",
+        "why_not_both": "The archive frames these as mutually constraining claims; the closeout keeps only the bounded part that survived inspection.",
+        "resolution": "The closeout is intentionally low-confidence: preserve the candidate graph, kill mature-framework claims."
+      },
+      "claims": [
+        {
+          "id": "C1",
+          "statement": "A categorical reformulation candidate survived as a research direction.",
+          "confidence": 0.35,
+          "status": "survived",
+          "evidence_for": [
+            "Existing synthesis/closeout material supports this bounded claim"
+          ],
+          "evidence_against": [
+            "Not promoted to final theorem without fresh external re-audit"
+          ]
+        },
+        {
+          "id": "C2",
+          "statement": "A complete categorical replacement of Landau theory is killed. ",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "SOP closeout bounded the original stronger claim",
+          "evidence_against": [
+            "Archived reviewer/auditor or synthesis material records boundary, prior-art risk, or insufficient derivation"
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "P1",
+          "statement": "Known symmetry-breaking cases should map functorially to order-parameter data",
+          "observable": "commuting diagram residual",
+          "expected_values": {
+            "value": "zero_for_simple_cases",
+            "unit": "dimensionless"
+          },
+          "measurement_conditions": "benchmark against Ising, XY, and topological counterexamples"
+        }
+      ],
+      "lessons": [
+        {
+          "category": "method",
+          "lesson": "Archive closeout must preserve both surviving bounded claims and killed overclaims."
+        },
+        {
+          "category": "review",
+          "lesson": "This registry entry is a knowledge-graph closeout, not a replacement for a fresh publication-grade referee cycle."
+        }
+      ]
+    },
+    {
+      "id": "val1813-LP17",
+      "title": "CMB quantum-decoherence proposal closes as constrained cosmology test",
+      "domain": "astro-ph.CO",
+      "contradiction_type": "data-reinterpretation",
+      "status": "SOP closeout from existing archive",
+      "date": "2026-06-04",
+      "rounds": 3,
+      "hidden_assumption": "Large-scale cosmological anomalies require new quantum decoherence physics",
+      "contributor": {
+        "orcid": "",
+        "github": "val1813",
+        "name": "val1813"
+      },
+      "contradiction": {
+        "proposition_A": "Large-scale cosmological anomalies require new quantum decoherence physics",
+        "proposition_B": "BAO, Pantheon, N_eff and full-scale tests strongly constrain reinterpretations",
+        "why_not_both": "The archive frames these as mutually constraining claims; the closeout keeps only the bounded part that survived inspection.",
+        "resolution": "The archive keeps only parameterized damping tests and kills broad anomaly explanation."
+      },
+      "claims": [
+        {
+          "id": "C1",
+          "statement": "Parameterized damping/convolution tests survived.",
+          "confidence": 0.45,
+          "status": "survived",
+          "evidence_for": [
+            "Existing synthesis/closeout material supports this bounded claim"
+          ],
+          "evidence_against": [
+            "Not promoted to final theorem without fresh external re-audit"
+          ]
+        },
+        {
+          "id": "C2",
+          "statement": "Broad CMB anomaly explanation without passing BAO/Pantheon constraints is killed. ",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "SOP closeout bounded the original stronger claim",
+          "evidence_against": [
+            "Archived reviewer/auditor or synthesis material records boundary, prior-art risk, or insufficient derivation"
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "P1",
+          "statement": "Gamma must jointly fit CMB and not spoil BAO/Pantheon constraints",
+          "observable": "CMB power spectrum and distance residuals",
+          "expected_values": {
+            "value": "small_Gamma_window",
+            "unit": "Mpc**2"
+          },
+          "measurement_conditions": "Planck/BAO/Pantheon joint fit"
+        }
+      ],
+      "lessons": [
+        {
+          "category": "method",
+          "lesson": "Archive closeout must preserve both surviving bounded claims and killed overclaims."
+        },
+        {
+          "category": "review",
+          "lesson": "This registry entry is a knowledge-graph closeout, not a replacement for a fresh publication-grade referee cycle."
+        }
+      ]
+    },
+    {
+      "id": "val1813-LP18",
+      "title": "Noisy free-fermion FCS closes as activity/parity/separability ledger",
+      "domain": "cond-mat.mes-hall",
+      "contradiction_type": "computational-barrier",
+      "status": "SOP closeout from existing archive",
+      "date": "2026-06-04",
+      "rounds": 3,
+      "hidden_assumption": "Noisy free-fermion transport can be summarized by one simple parity or separability rule",
+      "contributor": {
+        "orcid": "",
+        "github": "val1813",
+        "name": "val1813"
+      },
+      "contradiction": {
+        "proposition_A": "Noisy free-fermion transport can be summarized by one simple parity or separability rule",
+        "proposition_B": "Activity, coefficient extraction, signed basis, and mixed separability tests split the cases",
+        "why_not_both": "The archive frames these as mutually constraining claims; the closeout keeps only the bounded part that survived inspection.",
+        "resolution": "The closeout preserves validated ledgers and kills the single-rule overclaim."
+      },
+      "claims": [
+        {
+          "id": "C1",
+          "statement": "FCS ledger and several validation scans survived.",
+          "confidence": 0.6,
+          "status": "survived",
+          "evidence_for": [
+            "Existing synthesis/closeout material supports this bounded claim"
+          ],
+          "evidence_against": [
+            "Not promoted to final theorem without fresh external re-audit"
+          ]
+        },
+        {
+          "id": "C2",
+          "statement": "A universal one-line parity/separability law is killed. ",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "SOP closeout bounded the original stronger claim",
+          "evidence_against": [
+            "Archived reviewer/auditor or synthesis material records boundary, prior-art risk, or insufficient derivation"
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "P1",
+          "statement": "Two-terminal and two-reservoir scans separate by activity and signed-basis coefficients",
+          "observable": "FCS cumulants",
+          "expected_values": {
+            "value": "ledger_class",
+            "unit": "dimensionless"
+          },
+          "measurement_conditions": "noisy quadratic fermion transport simulation"
+        }
+      ],
+      "lessons": [
+        {
+          "category": "method",
+          "lesson": "Archive closeout must preserve both surviving bounded claims and killed overclaims."
+        },
+        {
+          "category": "review",
+          "lesson": "This registry entry is a knowledge-graph closeout, not a replacement for a fresh publication-grade referee cycle."
+        }
+      ]
+    },
+    {
+      "id": "val1813-LP19",
+      "title": "Soliton dissipation closes as DOS/classification criterion",
+      "domain": "nlin.PS",
+      "contradiction_type": "hidden-assumption",
+      "status": "SOP closeout from existing archive",
+      "date": "2026-06-04",
+      "rounds": 3,
+      "hidden_assumption": "Soliton dissipation can be classified by a single damping parameter",
+      "contributor": {
+        "orcid": "",
+        "github": "val1813",
+        "name": "val1813"
+      },
+      "contradiction": {
+        "proposition_A": "Soliton dissipation can be classified by a single damping parameter",
+        "proposition_B": "Density of states and bath structure change decay channels",
+        "why_not_both": "The archive frames these as mutually constraining claims; the closeout keeps only the bounded part that survived inspection.",
+        "resolution": "The closeout keeps a DOS-based classification and kills universal damping."
+      },
+      "claims": [
+        {
+          "id": "C1",
+          "statement": "DOS-based classification survived as bounded criterion.",
+          "confidence": 0.5,
+          "status": "survived",
+          "evidence_for": [
+            "Existing synthesis/closeout material supports this bounded claim"
+          ],
+          "evidence_against": [
+            "Not promoted to final theorem without fresh external re-audit"
+          ]
+        },
+        {
+          "id": "C2",
+          "statement": "Universal soliton damping independent of bath spectrum is killed. ",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "SOP closeout bounded the original stronger claim",
+          "evidence_against": [
+            "Archived reviewer/auditor or synthesis material records boundary, prior-art risk, or insufficient derivation"
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "P1",
+          "statement": "Dissipation rate follows bath DOS at soliton frequency",
+          "observable": "soliton lifetime",
+          "expected_values": {
+            "value": "proportional_to_rho",
+            "unit": "s"
+          },
+          "measurement_conditions": "controlled bath spectral density"
+        }
+      ],
+      "lessons": [
+        {
+          "category": "method",
+          "lesson": "Archive closeout must preserve both surviving bounded claims and killed overclaims."
+        },
+        {
+          "category": "review",
+          "lesson": "This registry entry is a knowledge-graph closeout, not a replacement for a fresh publication-grade referee cycle."
+        }
+      ]
+    },
+    {
+      "id": "val1813-LP2",
+      "title": "Planckian dissipation: cuprate-family regularity and cross-family undecidability",
+      "domain": "cond-mat.str-el",
+      "contradiction_type": "hidden-assumption",
+      "status": "bounded-closure",
+      "date": "2026-06-03",
+      "rounds": 5,
+      "hidden_assumption": "The clustering of alpha near one is a prescription-independent universal observable.",
+      "contributor": {
+        "orcid": "",
+        "github": "val1813",
+        "name": "val1813"
+      },
+      "contradiction": {
+        "proposition_A": "Planckian dissipation tau = alpha*hbar/(k_B*T) with alpha near one is a universal dynamical principle.",
+        "proposition_B": "The apparent alpha clustering can be produced or obscured by effective-mass prescriptions, material-family selection, and multiple mechanisms.",
+        "why_not_both": "A prescription-independent universal bound requires alpha to be robust across extraction conventions and families; the project materials show family and m* prescription dependence.",
+        "resolution": "Cuprates can show family-level regularity, but cross-family universality is not decidable with current data. The stable contribution is a diagnostic critique and roadmap for m*-independent tests."
+      },
+      "claims": [
+        {
+          "id": "C1",
+          "statement": "Planckian alpha near one is plausible within the cuprate family but cross-family universality is currently undecidable.",
+          "confidence": 0.78,
+          "status": "survived",
+          "evidence_for": [
+            "GATE5 closure states cuprate alpha about 1.0-1.2 and cross-family boundary",
+            "long synthesis states cuprate-family result does not extend to heavy fermion, organic, or MATBG families"
+          ],
+          "evidence_against": [
+            "GATE5 and long synthesis use different emphasis; both remain bounded rather than universal"
+          ]
+        },
+        {
+          "id": "C2",
+          "statement": "Effective-mass prescription dependence is a serious obstacle to interpreting alpha as a prescription-independent universal quantity.",
+          "confidence": 0.86,
+          "status": "survived",
+          "evidence_for": [
+            "long synthesis reports CeCoIn5 same-material 22x prescription difference and BF=8e7",
+            "Taupin & Paschen prior-art overlap noted in audit"
+          ],
+          "evidence_against": [
+            "Within a fixed prescription, the synthesis reports weaker dispersion"
+          ]
+        },
+        {
+          "id": "C3",
+          "statement": "The project proves that Planckian dissipation is physically meaningless or false.",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "LP2 synthesis explicitly positions the result as a boundary on evidence, not a negation of Planckian physics",
+          "evidence_against": [
+            "Cuprate family evidence survives",
+            "multiple theoretical mechanisms can generate alpha near one"
+          ]
+        },
+        {
+          "id": "C4",
+          "statement": "KW ratio is a complete m*-independent replacement for alpha.",
+          "confidence": 0.05,
+          "status": "killed",
+          "killed_by": "LP2 S3 synthesis in long-proposition summary",
+          "evidence_against": [
+            "KW ratio cross-material dispersion is reported larger than alpha dispersion",
+            "Cavanagh-Jacko-Powell prior art already showed multi-band KW nonuniversality"
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "P1",
+          "statement": "A same-material, two-prescription extraction should produce larger alpha shifts in heavy-fermion systems than within cuprates.",
+          "observable": "R_alpha = alpha_A/alpha_B",
+          "expected_values": {
+            "CeCoIn5_reference_ratio": {
+              "value": 22,
+              "uncertainty": 5,
+              "unit": "dimensionless"
+            }
+          },
+          "measurement_conditions": "Use matched transport data and explicitly compare QO-mass and A-coefficient-mass prescriptions."
+        },
+        {
+          "id": "P2",
+          "statement": "m*-independent relaxation observables should be required before cross-family universality can be decided.",
+          "observable": "eta_over_s or spectral_function_half_width",
+          "expected_values": {
+            "minimum_family_coverage": {
+              "value": 5,
+              "uncertainty": 2,
+              "unit": "materials_or_families"
+            }
+          },
+          "measurement_conditions": "Measure representative cuprate, iron-based, heavy-fermion, organic, and moire systems with a shared protocol."
+        }
+      ],
+      "lessons": [
+        {
+          "category": "data",
+          "lesson": "Separate within-prescription clustering from cross-prescription uncertainty before claiming universality."
+        },
+        {
+          "category": "prior_art",
+          "lesson": "Prescription-dependence and KW-ratio caveats were not wholly new; registry claims should emphasize quantitative synthesis and roadmap value."
+        },
+        {
+          "category": "method",
+          "lesson": "When the observable is extraction-dependent, the scientific output can be a decidability boundary rather than a positive theorem."
+        }
+      ]
+    },
+    {
+      "id": "val1813-LP23",
+      "title": "Helical worldline reinit closes as bounded geometric kinematics hypothesis",
+      "domain": "hep-th",
+      "contradiction_type": "structural-isomorphism",
+      "status": "SOP closeout from existing archive",
+      "date": "2026-06-04",
+      "rounds": 3,
+      "hidden_assumption": "A helical worldline construction directly unifies quantum spin and relativistic motion",
+      "contributor": {
+        "orcid": "",
+        "github": "val1813",
+        "name": "val1813"
+      },
+      "contradiction": {
+        "proposition_A": "A helical worldline construction directly unifies quantum spin and relativistic motion",
+        "proposition_B": "Inspector/reviewer cycles bound it to a geometric candidate with unresolved dynamics",
+        "why_not_both": "The archive frames these as mutually constraining claims; the closeout keeps only the bounded part that survived inspection.",
+        "resolution": "The closeout preserves the helical kinematic map and kills full unification claims."
+      },
+      "claims": [
+        {
+          "id": "C1",
+          "statement": "Helical kinematic representation survived as a candidate structure.",
+          "confidence": 0.42,
+          "status": "survived",
+          "evidence_for": [
+            "Existing synthesis/closeout material supports this bounded claim"
+          ],
+          "evidence_against": [
+            "Not promoted to final theorem without fresh external re-audit"
+          ]
+        },
+        {
+          "id": "C2",
+          "statement": "Direct derivation of full quantum dynamics from helix alone is killed. ",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "SOP closeout bounded the original stronger claim",
+          "evidence_against": [
+            "Archived reviewer/auditor or synthesis material records boundary, prior-art risk, or insufficient derivation"
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "P1",
+          "statement": "Spin-like phase advances with helix angular frequency",
+          "observable": "phase accumulation",
+          "expected_values": {
+            "value": "omega*T",
+            "unit": "radian"
+          },
+          "measurement_conditions": "worldline benchmark against Dirac/zitterbewegung limits"
+        }
+      ],
+      "lessons": [
+        {
+          "category": "method",
+          "lesson": "Archive closeout must preserve both surviving bounded claims and killed overclaims."
+        },
+        {
+          "category": "review",
+          "lesson": "This registry entry is a knowledge-graph closeout, not a replacement for a fresh publication-grade referee cycle."
+        }
+      ]
+    },
     {
       "id": "val1813-LP24",
       "title": "欧拉公式统一约束框架——QM与GR共享纤维丛根源",
@@ -11,6 +913,7 @@
       "rounds": 3,
       "hidden_assumption": "量子约束和引力约束可以在同一Poisson括号代数中处理",
       "contributor": {
+        "orcid": "",
         "github": "val1813",
         "name": "val1813"
       },
@@ -115,6 +1018,140 @@
       ]
     },
     {
+      "id": "val1813-LP25",
+      "title": "Identity formula closes as bounded cross-domain constraint, not universal final law",
+      "domain": "math-ph",
+      "contradiction_type": "structural-isomorphism",
+      "status": "SOP closeout from existing archive",
+      "date": "2026-06-04",
+      "rounds": 3,
+      "hidden_assumption": "One identity formula can serve as a final universal law across all target domains",
+      "contributor": {
+        "orcid": "",
+        "github": "val1813",
+        "name": "val1813"
+      },
+      "contradiction": {
+        "proposition_A": "One identity formula can serve as a final universal law across all target domains",
+        "proposition_B": "Reviewer rounds preserved only bounded cross-domain constraint pieces",
+        "why_not_both": "The archive frames these as mutually constraining claims; the closeout keeps only the bounded part that survived inspection.",
+        "resolution": "The closeout keeps the reusable identity/constraint graph and kills universality."
+      },
+      "claims": [
+        {
+          "id": "C1",
+          "statement": "A reusable identity-constraint decomposition survived.",
+          "confidence": 0.46,
+          "status": "survived",
+          "evidence_for": [
+            "Existing synthesis/closeout material supports this bounded claim"
+          ],
+          "evidence_against": [
+            "Not promoted to final theorem without fresh external re-audit"
+          ]
+        },
+        {
+          "id": "C2",
+          "statement": "Universal final-law interpretation is killed. ",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "SOP closeout bounded the original stronger claim",
+          "evidence_against": [
+            "Archived reviewer/auditor or synthesis material records boundary, prior-art risk, or insufficient derivation"
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "P1",
+          "statement": "Each new domain should reduce residual in the identity ledger only after boundary terms are included",
+          "observable": "identity residual",
+          "expected_values": {
+            "value": "near_zero_after_boundary",
+            "unit": "dimensionless"
+          },
+          "measurement_conditions": "apply to archived S3/S5 benchmark cases"
+        }
+      ],
+      "lessons": [
+        {
+          "category": "method",
+          "lesson": "Archive closeout must preserve both surviving bounded claims and killed overclaims."
+        },
+        {
+          "category": "review",
+          "lesson": "This registry entry is a knowledge-graph closeout, not a replacement for a fresh publication-grade referee cycle."
+        }
+      ]
+    },
+    {
+      "id": "val1813-LP26",
+      "title": "Cuprate SFD closes as low-confidence staged diagnostic",
+      "domain": "cond-mat.supr-con",
+      "contradiction_type": "hidden-assumption",
+      "status": "SOP closeout from existing archive",
+      "date": "2026-06-04",
+      "rounds": 3,
+      "hidden_assumption": "One SFD variable explains cuprate strange metal and superconductivity",
+      "contributor": {
+        "orcid": "",
+        "github": "val1813",
+        "name": "val1813"
+      },
+      "contradiction": {
+        "proposition_A": "One SFD variable explains cuprate strange metal and superconductivity",
+        "proposition_B": "Round reviews keep only staged diagnostics with inspector caveats",
+        "why_not_both": "The archive frames these as mutually constraining claims; the closeout keeps only the bounded part that survived inspection.",
+        "resolution": "The closeout preserves the diagnostic program and kills single-mechanism explanation."
+      },
+      "claims": [
+        {
+          "id": "C1",
+          "statement": "A staged cuprate diagnostic survived as a research program.",
+          "confidence": 0.38,
+          "status": "survived",
+          "evidence_for": [
+            "Existing synthesis/closeout material supports this bounded claim"
+          ],
+          "evidence_against": [
+            "Not promoted to final theorem without fresh external re-audit"
+          ]
+        },
+        {
+          "id": "C2",
+          "statement": "Single-variable explanation of cuprate phenomenology is killed. ",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "SOP closeout bounded the original stronger claim",
+          "evidence_against": [
+            "Archived reviewer/auditor or synthesis material records boundary, prior-art risk, or insufficient derivation"
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "P1",
+          "statement": "SFD diagnostic must correlate with T-linear slope and superconducting dome only in a bounded doping window",
+          "observable": "A coefficient, Tc, doping",
+          "expected_values": {
+            "value": "windowed_correlation",
+            "unit": "dimensionless"
+          },
+          "measurement_conditions": "cuprate doping series"
+        }
+      ],
+      "lessons": [
+        {
+          "category": "method",
+          "lesson": "Archive closeout must preserve both surviving bounded claims and killed overclaims."
+        },
+        {
+          "category": "review",
+          "lesson": "This registry entry is a knowledge-graph closeout, not a replacement for a fresh publication-grade referee cycle."
+        }
+      ]
+    },
+    {
       "id": "val1813-LP27",
       "title": "T-linear电阻率不逻辑蕴含非费米液体——隐藏假设检验",
       "domain": "cond-mat.str-el",
@@ -124,6 +1161,7 @@
       "rounds": 3,
       "hidden_assumption": "T-linear电阻率是准粒子破坏的充分必要条件",
       "contributor": {
+        "orcid": "",
         "github": "val1813",
         "name": "val1813"
       },
@@ -217,6 +1255,727 @@
         {
           "category": "method",
           "lesson": "B博士跨学科跳跃R1评分4.6/10，3轮才收敛到6.3→AHA触发频率从5轮降至2轮"
+        }
+      ]
+    },
+    {
+      "id": "val1813-LP3",
+      "title": "nu=5/2 bulk-edge tension resolves into a three-path boundary map",
+      "domain": "cond-mat.mes-hall",
+      "contradiction_type": "exp-vs-theory",
+      "status": "bounded-closure",
+      "date": "2026-06-01",
+      "rounds": 4,
+      "hidden_assumption": "A single kappa_xy = 5/2 kappa_0 measurement uniquely fixes the nu=5/2 topological order.",
+      "contributor": {
+        "orcid": "",
+        "github": "val1813",
+        "name": "val1813"
+      },
+      "contradiction": {
+        "proposition_A": "Bulk numerical evidence favors anti-Pfaffian or Pfaffian order at nu=5/2.",
+        "proposition_B": "Thermal Hall edge readout kappa_xy = 5/2 kappa_0 suggests a PH-Pfaffian-like response.",
+        "why_not_both": "Strict bulk-edge correspondence would map the bulk order directly to the edge thermal Hall response, so APf/Pf bulk and PHPf-like edge readout look inconsistent.",
+        "resolution": "The conflict is not resolved by one winning path. Edge reconstruction, smooth-disorder bulk-edge mapping, and Pf/APf domain-wall networks each survive with constraints. The output is a decision tree and boundary map, not a proof that bulk-edge correspondence is either globally false or globally exact."
+      },
+      "claims": [
+        {
+          "id": "C1",
+          "statement": "A PH-Pfaffian-like thermal Hall readout can coexist with APf-like bulk evidence only within constrained edge, mapping, or domain-wall scenarios.",
+          "confidence": 0.74,
+          "status": "survived",
+          "evidence_for": [
+            "LP3 synthesis lists three surviving bounded paths",
+            "Nu5o2 knowledge graph records APf edge parameter window and tradeoff"
+          ],
+          "evidence_against": [
+            "No single path is declared dominant"
+          ]
+        },
+        {
+          "id": "C2",
+          "statement": "A single kappa_xy = 5/2 kappa_0 measurement is insufficient to decide the nu=5/2 bulk topological order.",
+          "confidence": 0.88,
+          "status": "survived",
+          "evidence_for": [
+            "S4 decision-experiment synthesis requires disorder series, side-gate scan, and bulk probe",
+            "audit downgraded kappa_xy_frac to an extracted operational quantity"
+          ],
+          "evidence_against": []
+        },
+        {
+          "id": "C3",
+          "statement": "Bulk-edge correspondence is globally refuted in nu=5/2 samples.",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "LP3 comprehensive synthesis",
+          "evidence_against": [
+            "S2 mapping remains stable under experimentally relevant smooth long-range disorder",
+            "LP3 explicitly says there is insufficient basis to claim bulk-edge correspondence is overturned"
+          ]
+        },
+        {
+          "id": "C4",
+          "statement": "Pf/APf domain-wall percolation generically explains kappa_xy = 5/2 kappa_0 for arbitrary disorder.",
+          "confidence": 0.08,
+          "status": "killed",
+          "killed_by": "S3 boundary and reviewer audit",
+          "evidence_against": [
+            "Domain-wall path only survives in a narrow effective-disorder window",
+            "strong disorder can produce class-D thermal metal"
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "P1",
+          "statement": "If the domain-wall path is active, K = 5/2 should be strongest at intermediate effective disorder and degrade toward thermal metal at strong disorder.",
+          "observable": "thermal Hall conductance and longitudinal thermal conductance across a disorder series",
+          "expected_values": {
+            "K_mid_disorder": {
+              "value": 2.5,
+              "uncertainty": 0.2,
+              "unit": "kappa_0"
+            },
+            "kappa_xx_strong_disorder": {
+              "value": "increases",
+              "unit": "qualitative"
+            }
+          },
+          "measurement_conditions": "Compare intentionally varied disorder samples at the same filling and temperature protocol."
+        },
+        {
+          "id": "P2",
+          "statement": "Side-gate scans should correlate total kappa_xy, extracted fractional-channel response, and equilibration length if edge reconstruction is the dominant path.",
+          "observable": "kappa_xy, extracted fractional channel, edge equilibration length",
+          "expected_values": {
+            "correlation": {
+              "value": 1,
+              "uncertainty": 0.3,
+              "unit": "rank-correlation_sign"
+            }
+          },
+          "measurement_conditions": "Systematic side-gate tuning with fixed bulk density where possible."
+        }
+      ],
+      "lessons": [
+        {
+          "category": "observable",
+          "lesson": "Do not treat an extracted fractional thermal Hall component as a fundamental independent observable without the subtraction and loss protocol."
+        },
+        {
+          "category": "method",
+          "lesson": "When several mechanisms survive with different caveats, the output should be an experimental decision tree rather than a single-path declaration."
+        },
+        {
+          "category": "claim_control",
+          "lesson": "A bulk-edge tension is not equivalent to a global no-go for bulk-edge correspondence."
+        }
+      ]
+    },
+    {
+      "id": "val1813-LP4",
+      "title": "Many-body NHSE has a structural mother framework but no sector-independent invariant",
+      "domain": "cond-mat.stat-mech",
+      "contradiction_type": "hidden-assumption",
+      "status": "bounded-closure",
+      "date": "2026-06-01",
+      "rounds": 3,
+      "hidden_assumption": "A single sector-independent topological invariant should classify all many-body NHSE behavior.",
+      "contributor": {
+        "orcid": "",
+        "github": "val1813",
+        "name": "val1813"
+      },
+      "contradiction": {
+        "proposition_A": "A unified description of non-Hermitian many-body skin effect exists.",
+        "proposition_B": "Sector and density dependence prevent a single invariant from classifying NHSE in all sectors.",
+        "why_not_both": "If unity is interpreted as one scalar invariant, sector dependence kills it; if unity is structural, a Stinespring mother framework can still organize the problem.",
+        "resolution": "The surviving object is a three-layer map: structural Stinespring framework, density-resolved diagnostics, and boundary caveats. The original sector-independent invariant claim fails."
+      },
+      "claims": [
+        {
+          "id": "C1",
+          "statement": "A structural Stinespring mother framework can organize Lindbladian and postselected NHSE behavior.",
+          "confidence": 0.78,
+          "status": "survived",
+          "evidence_for": [
+            "LP4 synthesis states S1 mother framework and direction reversal",
+            "knowledge graph records gamma_c and N>1 confirmation"
+          ],
+          "evidence_against": [
+            "Physical implementation of nonlocal jump operators remains open"
+          ]
+        },
+        {
+          "id": "C2",
+          "statement": "NHSE fate must be described in structural, diagnostic, and boundary layers.",
+          "confidence": 0.86,
+          "status": "survived",
+          "evidence_for": [
+            "S3 and closure audit explicitly require three-layer map",
+            "S1-S2-S3 consistency audit found no contradiction"
+          ],
+          "evidence_against": []
+        },
+        {
+          "id": "C3",
+          "statement": "The original QLIF-like construction is a sector-independent topological invariant for all NHSE behavior.",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "LP4-S2 and LP4 closure audit",
+          "evidence_against": [
+            "S2 says original QLIF is not sector-independent",
+            "DR-NHDD is density-resolved and diagnostic"
+          ]
+        },
+        {
+          "id": "C4",
+          "statement": "LP4 fully solves experimental implementation of required nonlocal Lindblad operators.",
+          "confidence": 0.05,
+          "status": "killed",
+          "killed_by": "LP4 closure audit",
+          "evidence_against": [
+            "LP4-补2 physical implementation remains future work",
+            "finite-size/OBC/implementation caveats remain boundary layer"
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "P1",
+          "statement": "Density-resolved NHSE directionality should change sign across filling sectors.",
+          "observable": "DR-NHDD directionality D_rho",
+          "expected_values": {
+            "low_filling": {
+              "value": 1,
+              "unit": "sign"
+            },
+            "high_filling": {
+              "value": -1,
+              "unit": "sign"
+            },
+            "transition_rho": {
+              "value": 0.75,
+              "uncertainty": 0.1,
+              "unit": "filling_fraction"
+            }
+          },
+          "measurement_conditions": "Finite chains under OBC with sector-resolved preparation or postselection."
+        },
+        {
+          "id": "P2",
+          "statement": "Increasing gamma toward the postselected limit should trigger mother-space direction reversal near gamma_c.",
+          "observable": "skin direction in mother-space OBC spectrum",
+          "expected_values": {
+            "gamma_c": {
+              "value": "1 - (t_L - t_R)/G",
+              "unit": "dimensionless"
+            }
+          },
+          "measurement_conditions": "Formal simulation or engineered open-system platform with controllable nonlocal jump coupling G."
+        }
+      ],
+      "lessons": [
+        {
+          "category": "abstraction",
+          "lesson": "A unifying structure and a unifying invariant are different claims; killing the latter does not kill the former."
+        },
+        {
+          "category": "implementation",
+          "lesson": "Formal Lindblad operators should not be promoted to experimentally solved mechanisms without a physical realization path."
+        },
+        {
+          "category": "diagnostics",
+          "lesson": "When a diagnostic is sector-resolved, its sector label is part of the observable definition."
+        }
+      ]
+    },
+    {
+      "id": "val1813-LP5",
+      "title": "DQCP is model-dependent: SU(2) J-Q is weakly first order while large-N remains open",
+      "domain": "cond-mat.str-el",
+      "contradiction_type": "theory-vs-theory",
+      "status": "bounded-closure",
+      "date": "2026-06-03",
+      "rounds": 5,
+      "hidden_assumption": "DQCP has a single yes/no answer about continuity independent of model class.",
+      "contributor": {
+        "orcid": "",
+        "github": "val1813",
+        "name": "val1813"
+      },
+      "contradiction": {
+        "proposition_A": "DQCP is a true continuous transition beyond the Landau-Ginzburg-Wilson paradigm with emergent SO(5) behavior.",
+        "proposition_B": "The SU(2) J-Q DQCP is weakly first order, with pseudo-critical walking behavior.",
+        "why_not_both": "A specific SU(2) J-Q transition cannot be both truly continuous and weakly first order, although other model classes may realize different outcomes.",
+        "resolution": "For SU(2) J-Q the surviving conclusion is weak first order. The stronger claim that all DQCPs are weakly first order is not supported; SU(N>=8) and other classes remain possible continuous cases."
+      },
+      "claims": [
+        {
+          "id": "C1",
+          "statement": "The SU(2) J-Q DQCP is best classified as weakly first order.",
+          "confidence": 0.84,
+          "status": "survived",
+          "evidence_for": [
+            "LP5 synthesis reports three-line convergence",
+            "Takahashi L=1024 correlation result favors first order",
+            "GATE5 closure repeats SU(2) weak-first-order status"
+          ],
+          "evidence_against": [
+            "Entanglement evidence confirms Goldstone modes but does not alone distinguish continuous from pseudo-critical first order"
+          ]
+        },
+        {
+          "id": "C2",
+          "statement": "DQCP behavior should be treated as a cross-model spectrum, not a single binary answer.",
+          "confidence": 0.76,
+          "status": "survived",
+          "evidence_for": [
+            "GATE5 states SU(N>=8) may be truly continuous",
+            "S4 says weak first order is dynamical and model-specific rather than symmetry-forced"
+          ],
+          "evidence_against": [
+            "Critical N is estimated rather than closed"
+          ]
+        },
+        {
+          "id": "C3",
+          "statement": "All DQCPs are weakly first order by symmetry necessity.",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "LP5-S4 complex-DQCP analysis",
+          "evidence_against": [
+            "{Q,C}=0 permits real fixed points",
+            "SU(N>=8), loop models, and fermion models remain possible true-continuous cases"
+          ]
+        },
+        {
+          "id": "C4",
+          "statement": "Entanglement entropy alone proves the SU(2) J-Q transition is truly continuous.",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "LP5 comprehensive synthesis",
+          "evidence_against": [
+            "b approximately 2 confirms Goldstone modes but cannot distinguish SO(5) CFT from pseudo-critical first order",
+            "Takahashi finite-size result favors weak first order"
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "P1",
+          "statement": "SU(2) J-Q finite-size scaling should show pseudo-critical behavior up to xi between about 448 and 1024 before weak first-order signatures dominate.",
+          "observable": "correlation length and histogram structure",
+          "expected_values": {
+            "xi_min": {
+              "value": 448,
+              "unit": "lattice_spacing"
+            },
+            "xi_max": {
+              "value": 1024,
+              "unit": "lattice_spacing"
+            }
+          },
+          "measurement_conditions": "Large-scale simulations with correlated observable analysis."
+        },
+        {
+          "id": "P2",
+          "statement": "Increasing N should move DQCP candidates toward a genuinely continuous regime around N_c of order 8-10.",
+          "observable": "presence or absence of real RG fixed point and first-order histogram signatures",
+          "expected_values": {
+            "N_c": {
+              "value": 9,
+              "uncertainty": 2,
+              "unit": "dimensionless"
+            }
+          },
+          "measurement_conditions": "Compare SU(N) models across N with matched finite-size protocols."
+        }
+      ],
+      "lessons": [
+        {
+          "category": "scope",
+          "lesson": "A model-specific weak-first-order conclusion should not be promoted to a universal DQCP no-go theorem."
+        },
+        {
+          "category": "diagnostics",
+          "lesson": "Goldstone-mode evidence and continuity evidence are logically distinct."
+        },
+        {
+          "category": "prior_art",
+          "lesson": "When a later numerical result independently resolves a question, project novelty shifts toward synthesis and boundary classification."
+        }
+      ]
+    },
+    {
+      "id": "val1813-LP6",
+      "title": "Black-hole islands as bounded recovery bookkeeping rather than independent Lorentzian transport",
+      "domain": "hep-th",
+      "contradiction_type": "hidden-assumption",
+      "status": "low-confidence-bounded-closure",
+      "date": "2026-06-03",
+      "rounds": 2,
+      "hidden_assumption": "Recovering the Page curve by island formula automatically supplies a microscopic unitary transport mechanism for Hawking radiation.",
+      "contributor": {
+        "orcid": "",
+        "github": "val1813",
+        "name": "val1813"
+      },
+      "contradiction": {
+        "proposition_A": "Island formula, replica wormholes, and Hayden-Preskill scrambling solve the black-hole information problem by giving a unitary encoding description.",
+        "proposition_B": "Page-curve recovery and entropic bookkeeping do not by themselves give a microscopic Lorentzian mechanism that transports information into Hawking radiation.",
+        "why_not_both": "A correct entropy curve can be compatible with algebraic recovery while leaving the operational transport channel or boundary algebra choice unresolved.",
+        "resolution": "The reliable result is bounded and low-confidence at the LP level. LP6-S3 gives an L1 boundary-algebra separation proposition: narrow boundary algebra can show an O(1) relative-entropy gap, while wide radiation/bath algebra makes the gap recovery-error controlled. LP6-S1 and Round 1-2 materials strengthen skepticism for flat-space islands, but audits prevent a global no-go theorem."
+      },
+      "claims": [
+        {
+          "id": "C1",
+          "statement": "Island formula can support algebraic recovery/bookkeeping without by itself supplying an independent Lorentzian transport mechanism.",
+          "confidence": 0.62,
+          "status": "survived",
+          "evidence_for": [
+            "LP6-S3 summary and audit explicitly state recovery/bookkeeping rather than transport mechanism",
+            "knowledge graph records narrow/wide algebra separation"
+          ],
+          "evidence_against": [
+            "This is L1 conceptual proposition, not an L2 theorem"
+          ]
+        },
+        {
+          "id": "C2",
+          "statement": "Flat-space operational island constructions face structural BMS and algebraic obstacles.",
+          "confidence": 0.45,
+          "status": "survived",
+          "evidence_for": [
+            "LP6-S1 summary lists C1-C2 tension and Geng operator-level obstacle",
+            "Round 1-2 PI synthesis says proposition B is strengthened"
+          ],
+          "evidence_against": [
+            "Reviewer audit reports prior-art overlap, A6 unverified, and conflict with positive island calculations"
+          ]
+        },
+        {
+          "id": "C3",
+          "statement": "LP6 proves that island formula is wrong or that the Page curve is false.",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "LP6-S3 closure audit",
+          "evidence_against": [
+            "S3 explicitly does not deny island entropy formula or Page curve",
+            "wide algebra can support approximate recovery/bookkeeping"
+          ]
+        },
+        {
+          "id": "C4",
+          "statement": "C1-C2 incompatibility is a global L2 no-go theorem for all islands.",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "LP6-S1 audit and external reviewer",
+          "evidence_against": [
+            "A6 sector-mixing assumption is unverified",
+            "positive AdS/JT island calculations must be separately handled",
+            "claim downgraded to structural obstacle analysis"
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "P1",
+          "statement": "A diagnostic Page-time dependence on detector celestial-sphere coverage would support boundary-algebra dependence.",
+          "observable": "Page-time or recovery quality as a function of angular radiation coverage",
+          "expected_values": {
+            "coverage_dependence": {
+              "value": "nonzero_if_boundary_algebra_limited",
+              "unit": "qualitative"
+            }
+          },
+          "measurement_conditions": "Theoretical toy models or analog code subspaces with tunable radiation/bath algebra."
+        },
+        {
+          "id": "P2",
+          "statement": "In wide-algebra toy models, the relative-entropy gap should scale with approximate recovery error rather than remain O(1).",
+          "observable": "Delta_wide versus epsilon_N",
+          "expected_values": {
+            "Delta_wide_upper_bound": {
+              "value": "f(epsilon_N)",
+              "unit": "dimensionless"
+            }
+          },
+          "measurement_conditions": "SYK/JT-inspired code subspace simulations with explicit decoder resources."
+        }
+      ],
+      "lessons": [
+        {
+          "category": "claim_control",
+          "lesson": "Entropy recovery, algebraic recovery, and microscopic Lorentzian transport must be kept distinct."
+        },
+        {
+          "category": "audit",
+          "lesson": "A claim with unverified sector-mixing assumptions and strong prior-art overlap must be registered as low-confidence L1, not a theorem."
+        },
+        {
+          "category": "prior_art",
+          "lesson": "Negative flat-space-island arguments must explicitly separate project increments from Geng-style operator and factorization arguments."
+        }
+      ]
+    },
+    {
+      "id": "val1813-LP7",
+      "title": "QM-GR unification reduced to six-channel candidate admission, not a unified dynamics",
+      "domain": "gr-qc",
+      "contradiction_type": "hidden-assumption",
+      "status": "bounded-structural-closure",
+      "date": "2026-06-01",
+      "rounds": 10,
+      "hidden_assumption": "A single scalar formula or causal-set observable block can be promoted into a full QM-GR unification dynamics.",
+      "contributor": {
+        "orcid": "",
+        "github": "val1813",
+        "name": "val1813"
+      },
+      "contradiction": {
+        "proposition_A": "QM and GR can be unified by finding a single fundamental equation or one privileged observable formula.",
+        "proposition_B": "Known source, mediator, noise, entropy, observable, and frame boundaries prevent a current single-formula closure.",
+        "why_not_both": "If a candidate is a true unified dynamics it must close all six operational channels; LP7 only constructs an interface/admission layer and explicitly lacks a shared action, Hamiltonian, path integral, stochastic generator, or observable algebra.",
+        "resolution": "LP7 closes at an interface and screening layer: I[T] plus J_unify[I[T]]. It is a candidate-admission functional, not a confirmed unified theory."
+      },
+      "claims": [
+        {
+          "id": "C1",
+          "statement": "LP7 establishes a six-channel candidate-admission interface I[T] and J_unify[I[T]].",
+          "confidence": 0.7,
+          "status": "survived",
+          "evidence_for": [
+            "final closure and total graph files both state I[T] and J_unify",
+            "knowledge graph records K96-K101"
+          ],
+          "evidence_against": [
+            "external audit rates result as classification framework rather than publishable physics conclusion"
+          ]
+        },
+        {
+          "id": "C2",
+          "statement": "T* is a layered interface template and cannot be upgraded to a unified theory body.",
+          "confidence": 0.84,
+          "status": "survived",
+          "evidence_for": [
+            "final audit explicitly forbids upgrading T*",
+            "knowledge graph K99-K100 records no dynamical closure"
+          ],
+          "evidence_against": []
+        },
+        {
+          "id": "C3",
+          "statement": "LP7 discovered a confirmed unified QM-GR dynamical equation.",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "LP7 final closure",
+          "evidence_against": [
+            "No shared action, Hamiltonian, path integral, stochastic generator, or unified observable algebra was produced",
+            "J_unify is admission functional, not fundamental equation"
+          ]
+        },
+        {
+          "id": "C4",
+          "statement": "The causal-set J_obs block alone solves QM-GR unification.",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "LP7 total graph and final audit",
+          "evidence_against": [
+            "J_obs_CS is only the observable response block",
+            "It does not supply BMV mediation, Page curve, source-channel closure, or frame consistency"
+          ]
+        },
+        {
+          "id": "C5",
+          "statement": "LP7 is ready to be treated as a fully SOP-compliant publishable physics result.",
+          "confidence": 0.05,
+          "status": "killed",
+          "killed_by": "external audit report",
+          "evidence_against": [
+            "GATE0 and GATE1 missing",
+            "literature library scope mismatch",
+            "VERIFIER and LP_CLOSURE not formally triggered"
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "P1",
+          "statement": "A concrete candidate theory T that fails any one of the six channels should be classified as partial rather than complete.",
+          "observable": "componentwise J_unify[T] pass/fail vector",
+          "expected_values": {
+            "complete_candidate": {
+              "value": "all_components_below_tolerance",
+              "unit": "logical"
+            }
+          },
+          "measurement_conditions": "Apply I[T] construction to a specific candidate theory, not to an abstract template."
+        },
+        {
+          "id": "P2",
+          "statement": "Causal-set observable matching can pass J_obs while leaving other unification blocks unresolved.",
+          "observable": "J_obs_CS and remaining J_PG, J_BMV, J_hybrid, J_BH, J_frame",
+          "expected_values": {
+            "J_obs_CS": {
+              "value": "can_be_small",
+              "unit": "distance"
+            },
+            "other_blocks": {
+              "value": "not_implied",
+              "unit": "logical"
+            }
+          },
+          "measurement_conditions": "Test causal-set candidates against the full six-channel interface."
+        }
+      ],
+      "lessons": [
+        {
+          "category": "scope",
+          "lesson": "A screening functional is useful but must not be presented as a fundamental dynamics."
+        },
+        {
+          "category": "SOP",
+          "lesson": "Inherited literature libraries can invalidate closure confidence when the new LP topic changes scope."
+        },
+        {
+          "category": "next_step",
+          "lesson": "Further progress requires choosing a concrete candidate T and evaluating all six channels, not adding more abstract blocks."
+        }
+      ]
+    },
+    {
+      "id": "val1813-LP8",
+      "title": "Measurement-induced phase transitions require no-postselection/noise-universality boundaries",
+      "domain": "quant-ph",
+      "contradiction_type": "hidden-assumption",
+      "status": "SOP closeout from existing archive",
+      "date": "2026-06-04",
+      "rounds": 3,
+      "hidden_assumption": "Postselected MIPT criticality directly transfers to physical monitored systems",
+      "contributor": {
+        "orcid": "",
+        "github": "val1813",
+        "name": "val1813"
+      },
+      "contradiction": {
+        "proposition_A": "Postselected MIPT criticality directly transfers to physical monitored systems",
+        "proposition_B": "Noise, feedback, and decoding constraints can change observability",
+        "why_not_both": "The archive frames these as mutually constraining claims; the closeout keeps only the bounded part that survived inspection.",
+        "resolution": "The closeout keeps a boundary map between ideal and physical MIPT regimes."
+      },
+      "claims": [
+        {
+          "id": "C1",
+          "statement": "A no-postselection boundary map survived.",
+          "confidence": 0.66,
+          "status": "survived",
+          "evidence_for": [
+            "Existing synthesis/closeout material supports this bounded claim"
+          ],
+          "evidence_against": [
+            "Not promoted to final theorem without fresh external re-audit"
+          ]
+        },
+        {
+          "id": "C2",
+          "statement": "Directly equating postselected and physical MIPT universality is killed. ",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "SOP closeout bounded the original stronger claim",
+          "evidence_against": [
+            "Archived reviewer/auditor or synthesis material records boundary, prior-art risk, or insufficient derivation"
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "P1",
+          "statement": "Decoder-visible transition shifts under realistic noise",
+          "observable": "mutual information crossing",
+          "expected_values": {
+            "value": "shifted_p_c",
+            "unit": "dimensionless"
+          },
+          "measurement_conditions": "monitored circuit without postselection"
+        }
+      ],
+      "lessons": [
+        {
+          "category": "method",
+          "lesson": "Archive closeout must preserve both surviving bounded claims and killed overclaims."
+        },
+        {
+          "category": "review",
+          "lesson": "This registry entry is a knowledge-graph closeout, not a replacement for a fresh publication-grade referee cycle."
+        }
+      ]
+    },
+    {
+      "id": "val1813-LP9",
+      "title": "Discrete time crystal claims close as lifetime/no-go/prethermal ledger",
+      "domain": "cond-mat.dis-nn",
+      "contradiction_type": "hidden-assumption",
+      "status": "SOP closeout from existing archive",
+      "date": "2026-06-04",
+      "rounds": 3,
+      "hidden_assumption": "Subharmonic response alone proves a stable time crystal",
+      "contributor": {
+        "orcid": "",
+        "github": "val1813",
+        "name": "val1813"
+      },
+      "contradiction": {
+        "proposition_A": "Subharmonic response alone proves a stable time crystal",
+        "proposition_B": "Heating, finite lifetime, and prethermal regimes can mimic or bound the phenomenon",
+        "why_not_both": "The archive frames these as mutually constraining claims; the closeout keeps only the bounded part that survived inspection.",
+        "resolution": "The closeout preserves a diagnostic ledger separating stable, prethermal, and artifact responses."
+      },
+      "claims": [
+        {
+          "id": "C1",
+          "statement": "Prethermal lifetime criterion survived.",
+          "confidence": 0.67,
+          "status": "survived",
+          "evidence_for": [
+            "Existing synthesis/closeout material supports this bounded claim"
+          ],
+          "evidence_against": [
+            "Not promoted to final theorem without fresh external re-audit"
+          ]
+        },
+        {
+          "id": "C2",
+          "statement": "Subharmonic response without rigidity/lifetime checks is killed. ",
+          "confidence": 0.0,
+          "status": "killed",
+          "killed_by": "SOP closeout bounded the original stronger claim",
+          "evidence_against": [
+            "Archived reviewer/auditor or synthesis material records boundary, prior-art risk, or insufficient derivation"
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "id": "P1",
+          "statement": "Lifetime grows exponentially with drive frequency in prethermal regime",
+          "observable": "subharmonic peak lifetime",
+          "expected_values": {
+            "value": "exp(c*omega/J)",
+            "unit": "drive_periods"
+          },
+          "measurement_conditions": "Floquet spin system at high frequency"
+        }
+      ],
+      "lessons": [
+        {
+          "category": "method",
+          "lesson": "Archive closeout must preserve both surviving bounded claims and killed overclaims."
+        },
+        {
+          "category": "review",
+          "lesson": "This registry entry is a knowledge-graph closeout, not a replacement for a fresh publication-grade referee cycle."
         }
       ]
     }
